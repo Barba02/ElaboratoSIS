@@ -1,0 +1,35 @@
+# jedi
+Number of states in original machine : 5
+Number of states in minimized machine : 5
+fsm           	pi=12	po= 4	nodes=  9	latches= 3
+lits(sop)= 141	#states(STG)=   5
+
+# nova
+Number of states in original machine : 5
+Number of states in minimized machine : 5
+Warning: network `SISQBAa06743', node "v0" does not fanout
+Warning: network `SISQBAa06743', node "v1" does not fanout
+Warning: network `SISQBAa06743', node "v2" does not fanout
+Warning: network `SISQBAa06743', node "v3" does not fanout
+Warning: network `SISQBAa06743', node "v4" does not fanout
+Warning: network `SISQBAa06743', node "v5" does not fanout
+Warning: network `SISQBAa06743', node "v6" does not fanout
+Warning: network `SISQBAa06743', node "v7" does not fanout
+Warning: network `SISQBAa06743', node "v8" does not fanout
+Warning: network `SISQBAa06743', node "v9" does not fanout
+Warning: network `SISQBAa06743', node "v10" does not fanout
+Warning: network `SISQBAa06743', node "v11" does not fanout
+Warning: network `SISQBAa06743', node "v0" does not fanout
+Warning: network `SISQBAa06743', node "v1" does not fanout
+Warning: network `SISQBAa06743', node "v2" does not fanout
+Warning: network `SISQBAa06743', node "v3" does not fanout
+Warning: network `SISQBAa06743', node "v4" does not fanout
+Warning: network `SISQBAa06743', node "v5" does not fanout
+Warning: network `SISQBAa06743', node "v6" does not fanout
+Warning: network `SISQBAa06743', node "v7" does not fanout
+Warning: network `SISQBAa06743', node "v8" does not fanout
+Warning: network `SISQBAa06743', node "v9" does not fanout
+Warning: network `SISQBAa06743', node "v10" does not fanout
+Warning: network `SISQBAa06743', node "v11" does not fanout
+fsm           	pi=12	po= 4	nodes= 11	latches= 3
+lits(sop)= 129	#states(STG)=   5

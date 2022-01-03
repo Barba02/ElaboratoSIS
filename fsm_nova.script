@@ -1,0 +1,8 @@
+read_blif fsm.blif
+state_minimize stamina
+state_assign nova
+stg_to_network
+source script.rugged
+reduce_depth
+write_blif fsm_nova.blif
+print_stats
