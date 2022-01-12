@@ -1,0 +1,2 @@
+- da errore bisogna prima resettare per tornare a ph_iniziale
+- con valvola_basico e valcola_acido entrambi a 0 il datapath manda in output
