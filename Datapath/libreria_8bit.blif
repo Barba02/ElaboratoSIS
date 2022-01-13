@@ -1,0 +1,41 @@
+.model not_8bit
+.inputs I7 I6 I5 I4 I3 I2 I1 I0
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.subckt not I=I7 O=O7
+.subckt not I=I6 O=O6
+.subckt not I=I5 O=O5
+.subckt not I=I4 O=O4
+.subckt not I=I3 O=O3
+.subckt not I=I2 O=O2
+.subckt not I=I1 O=O1
+.subckt not I=I0 O=O0
+.search libreria.blif
+.end
+
+.model uno_8bit
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.subckt zero O=O7
+.subckt zero O=O6
+.subckt zero O=O5
+.subckt zero O=O4
+.subckt zero O=O3
+.subckt zero O=O2
+.subckt zero O=O1
+.subckt uno O=O0
+.search libreria.blif
+.end
+
+.model sommatore_8bit
+.inputs A7 A6 A5 A4 A3 A2 A1 A0 B7 B6 B5 B4 B3 B2 B1 B0
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.subckt zero O=z
+.subckt sommatore A=A0 B=B0 CARRY_IN=z O=O0 CARRY_OUT=c0
+.subckt sommatore A=A1 B=B1 CARRY_IN=c0 O=O1 CARRY_OUT=c1
+.subckt sommatore A=A2 B=B2 CARRY_IN=c1 O=O2 CARRY_OUT=c2
+.subckt sommatore A=A3 B=B3 CARRY_IN=c2 O=O3 CARRY_OUT=c3
+.subckt sommatore A=A4 B=B4 CARRY_IN=c3 O=O4 CARRY_OUT=c4
+.subckt sommatore A=A5 B=B5 CARRY_IN=c4 O=O5 CARRY_OUT=c5
+.subckt sommatore A=A6 B=B6 CARRY_IN=c5 O=O6 CARRY_OUT=c6
+.subckt sommatore A=A7 B=B7 CARRY_IN=c6 O=O7 CARRY_OUT=c7
+.search libreria.blif
+.end
