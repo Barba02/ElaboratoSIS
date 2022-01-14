@@ -1,9 +1,24 @@
 .model mux
-.inputs S i1 i0
+.inputs S1 S0 I3 I2 I1 I0
 .outputs O
-.names S i1 i0 O
-0-1 1
-11- 1
+.names S1 S0 I3 I2 I1 I0 O
+001--- 1
+01-1-- 1
+10--1- 1    
+11---1 1
+.end
+
+.model demux
+.inputs S1 S0 I
+.outputs O3 O2 O1 O0
+.names S1 S0 I O3
+111 1
+.names S1 S0 I O2
+101 1
+.names S1 S0 I O1
+011 1
+.names S1 S0 I O0
+001 1
 .end
 
 .model registro

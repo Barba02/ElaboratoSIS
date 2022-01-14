@@ -39,3 +39,17 @@
 .subckt sommatore A=A7 B=B7 CARRY_IN=c6 O=O7 CARRY_OUT=c7
 .search libreria.blif
 .end
+
+.model demux_8bit
+.inputs S1 S0 I7 I6 I5 I4 I3 I2 I1 I0
+.outputs O3_7 O3_6 O3_5 O3_4 O3_3 O3_2 O3_1 O3_0 O2_7 O2_6 O2_5 O2_4 O2_3 O2_2 O2_1 O2_0 O1_7 O1_6 O1_5 O1_4 O1_3 O1_2 O1_1 O1_0 O0_7 O0_6 O0_5 O0_4 O0_3 O0_2 O0_1 O0_0
+.subckt demux S1=S1 S0=S0 I=I7 O3=O3_7 O2=O2_7 O1=O1_7 O0=O0_7
+.subckt demux S1=S1 S0=S0 I=I6 O3=O3_6 O2=O2_6 O1=O1_6 O0=O0_6
+.subckt demux S1=S1 S0=S0 I=I5 O3=O3_5 O2=O2_5 O1=O1_5 O0=O0_5
+.subckt demux S1=S1 S0=S0 I=I4 O3=O3_4 O2=O2_4 O1=O1_4 O0=O0_4
+.subckt demux S1=S1 S0=S0 I=I3 O3=O3_3 O2=O2_3 O1=O1_3 O0=O0_3
+.subckt demux S1=S1 S0=S0 I=I2 O3=O3_2 O2=O2_2 O1=O1_2 O0=O0_2
+.subckt demux S1=S1 S0=S0 I=I1 O3=O3_1 O2=O2_1 O1=O1_1 O0=O0_1
+.subckt demux S1=S1 S0=S0 I=I0 O3=O3_0 O2=O2_0 O1=O1_0 O0=O0_0
+.search libreria.blif
+.end
