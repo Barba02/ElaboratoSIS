@@ -53,3 +53,17 @@
 .subckt demux S1=S1 S0=S0 I=I0 O3=O3_0 O2=O2_0 O1=O1_0 O0=O0_0
 .search libreria.blif
 .end
+
+.model mux_8bit
+.inputs S1 S0 I3_7 I3_6 I3_5 I3_4 I3_3 I3_2 I3_1 I3_0 I2_7 I2_6 I2_5 I2_4 I2_3 I2_2 I2_1 I2_0 I1_7 I1_6 I1_5 I1_4 I1_3 I1_2 I1_1 I1_0 I0_7 I0_6 I0_5 I0_4 I0_3 I0_2 I0_1 I0_0
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.subckt mux S1=S1 S0=S0 I3=I3_7 I2=I2_7 I1=I1_7 I0=I0_7 O=O7
+.subckt mux S1=S1 S0=S0 I3=I3_6 I2=I2_6 I1=I1_6 I0=I0_6 O=O6
+.subckt mux S1=S1 S0=S0 I3=I3_5 I2=I2_5 I1=I1_5 I0=I0_5 O=O5
+.subckt mux S1=S1 S0=S0 I3=I3_4 I2=I2_4 I1=I1_4 I0=I0_4 O=O4
+.subckt mux S1=S1 S0=S0 I3=I3_3 I2=I2_3 I1=I1_3 I0=I0_3 O=O3
+.subckt mux S1=S1 S0=S0 I3=I3_2 I2=I2_2 I1=I1_2 I0=I0_2 O=O2
+.subckt mux S1=S1 S0=S0 I3=I3_1 I2=I2_1 I1=I1_1 I0=I0_1 O=O1
+.subckt mux S1=S1 S0=S0 I3=I3_0 I2=I2_0 I1=I1_0 I0=I0_0 O=O0
+.search libreria.blif
+.end
