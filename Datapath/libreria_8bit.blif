@@ -66,6 +66,22 @@
 .search libreria.blif
 .end
 
+.model incrementatore_8bit
+.inputs A7 A6 A5 A4 A3 A2 A1 A0
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.subckt zero O=z
+.subckt uno_8bit O7=B7 O6=B6 O5=B5 O4=B4 O3=B3 O2=B2 O1=B1 O0=B0
+.subckt sommatore A=A0 B=B0 CARRY_IN=z O=O0 CARRY_OUT=c0
+.subckt sommatore A=A1 B=B1 CARRY_IN=c0 O=O1 CARRY_OUT=c1
+.subckt sommatore A=A2 B=B2 CARRY_IN=c1 O=O2 CARRY_OUT=c2
+.subckt sommatore A=A3 B=B3 CARRY_IN=c2 O=O3 CARRY_OUT=c3
+.subckt sommatore A=A4 B=B4 CARRY_IN=c3 O=O4 CARRY_OUT=c4
+.subckt sommatore A=A5 B=B5 CARRY_IN=c4 O=O5 CARRY_OUT=c5
+.subckt sommatore A=A6 B=B6 CARRY_IN=c5 O=O6 CARRY_OUT=c6
+.subckt sommatore A=A7 B=B7 CARRY_IN=c6 O=O7 CARRY_OUT=c7
+.search libreria.blif
+.end
+
 .model demux_4comb_8bit
 .inputs S1 S0 I7 I6 I5 I4 I3 I2 I1 I0
 .outputs O3_7 O3_6 O3_5 O3_4 O3_3 O3_2 O3_1 O3_0 O2_7 O2_6 O2_5 O2_4 O2_3 O2_2 O2_1 O2_0 O1_7 O1_6 O1_5 O1_4 O1_3 O1_2 O1_1 O1_0 O0_7 O0_6 O0_5 O0_4 O0_3 O0_2 O0_1 O0_0
@@ -146,4 +162,18 @@
 .subckt maggiore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=B7 B6=B6 B5=B5 B4=B4 B3=B3 B2=B2 B1=B1 B0=B0 O=X
 .names X O
 0 1
+.end
+
+.model registro_8bit
+.inputs A7 A6 A5 A4 A3 A2 A1 A0
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.subckt registro A=A7 O=O7
+.subckt registro A=A6 O=O6
+.subckt registro A=A5 O=O5
+.subckt registro A=A4 O=O4
+.subckt registro A=A3 O=O3
+.subckt registro A=A2 O=O2
+.subckt registro A=A1 O=O1
+.subckt registro A=A0 O=O0
+.search libreria.blif
 .end
