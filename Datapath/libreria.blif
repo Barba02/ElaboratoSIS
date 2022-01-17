@@ -1,4 +1,12 @@
-.model mux
+.model mux_2comb
+.inputs S I1 I0
+.outputs O
+.names S I1 I0 O
+11- 1
+0-1 1
+.end
+
+.model mux_4comb
 .inputs S1 S0 I3 I2 I1 I0
 .outputs O
 .names S1 S0 I3 I2 I1 I0 O
@@ -8,7 +16,7 @@
 00---1 1
 .end
 
-.model demux
+.model demux_4comb
 .inputs S1 S0 I
 .outputs O3 O2 O1 O0
 .names S1 S0 I O3

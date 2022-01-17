@@ -66,31 +66,45 @@
 .search libreria.blif
 .end
 
-.model demux_8bit
+.model demux_4comb_8bit
 .inputs S1 S0 I7 I6 I5 I4 I3 I2 I1 I0
 .outputs O3_7 O3_6 O3_5 O3_4 O3_3 O3_2 O3_1 O3_0 O2_7 O2_6 O2_5 O2_4 O2_3 O2_2 O2_1 O2_0 O1_7 O1_6 O1_5 O1_4 O1_3 O1_2 O1_1 O1_0 O0_7 O0_6 O0_5 O0_4 O0_3 O0_2 O0_1 O0_0
-.subckt demux S1=S1 S0=S0 I=I7 O3=O3_7 O2=O2_7 O1=O1_7 O0=O0_7
-.subckt demux S1=S1 S0=S0 I=I6 O3=O3_6 O2=O2_6 O1=O1_6 O0=O0_6
-.subckt demux S1=S1 S0=S0 I=I5 O3=O3_5 O2=O2_5 O1=O1_5 O0=O0_5
-.subckt demux S1=S1 S0=S0 I=I4 O3=O3_4 O2=O2_4 O1=O1_4 O0=O0_4
-.subckt demux S1=S1 S0=S0 I=I3 O3=O3_3 O2=O2_3 O1=O1_3 O0=O0_3
-.subckt demux S1=S1 S0=S0 I=I2 O3=O3_2 O2=O2_2 O1=O1_2 O0=O0_2
-.subckt demux S1=S1 S0=S0 I=I1 O3=O3_1 O2=O2_1 O1=O1_1 O0=O0_1
-.subckt demux S1=S1 S0=S0 I=I0 O3=O3_0 O2=O2_0 O1=O1_0 O0=O0_0
+.subckt demux_4comb S1=S1 S0=S0 I=I7 O3=O3_7 O2=O2_7 O1=O1_7 O0=O0_7
+.subckt demux_4comb S1=S1 S0=S0 I=I6 O3=O3_6 O2=O2_6 O1=O1_6 O0=O0_6
+.subckt demux_4comb S1=S1 S0=S0 I=I5 O3=O3_5 O2=O2_5 O1=O1_5 O0=O0_5
+.subckt demux_4comb S1=S1 S0=S0 I=I4 O3=O3_4 O2=O2_4 O1=O1_4 O0=O0_4
+.subckt demux_4comb S1=S1 S0=S0 I=I3 O3=O3_3 O2=O2_3 O1=O1_3 O0=O0_3
+.subckt demux_4comb S1=S1 S0=S0 I=I2 O3=O3_2 O2=O2_2 O1=O1_2 O0=O0_2
+.subckt demux_4comb S1=S1 S0=S0 I=I1 O3=O3_1 O2=O2_1 O1=O1_1 O0=O0_1
+.subckt demux_4comb S1=S1 S0=S0 I=I0 O3=O3_0 O2=O2_0 O1=O1_0 O0=O0_0
 .search libreria.blif
 .end
 
-.model mux_8bit
+.model mux_2comb_8bit
+.inputs S I1_7 I1_6 I1_5 I1_4 I1_3 I1_2 I1_1 I1_0 I0_7 I0_6 I0_5 I0_4 I0_3 I0_2 I0_1 I0_0
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.subckt mux_2comb S=S I1=I1_7 I0=I0_7 O=O7
+.subckt mux_2comb S=S I1=I1_6 I0=I0_6 O=O6
+.subckt mux_2comb S=S I1=I1_5 I0=I0_5 O=O5
+.subckt mux_2comb S=S I1=I1_4 I0=I0_4 O=O4
+.subckt mux_2comb S=S I1=I1_3 I0=I0_3 O=O3
+.subckt mux_2comb S=S I1=I1_2 I0=I0_2 O=O2
+.subckt mux_2comb S=S I1=I1_1 I0=I0_1 O=O1
+.subckt mux_2comb S=S I1=I1_0 I0=I0_0 O=O0
+.search libreria.blif
+.end
+
+.model mux_4comb_8bit
 .inputs S1 S0 I3_7 I3_6 I3_5 I3_4 I3_3 I3_2 I3_1 I3_0 I2_7 I2_6 I2_5 I2_4 I2_3 I2_2 I2_1 I2_0 I1_7 I1_6 I1_5 I1_4 I1_3 I1_2 I1_1 I1_0 I0_7 I0_6 I0_5 I0_4 I0_3 I0_2 I0_1 I0_0
 .outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt mux S1=S1 S0=S0 I3=I3_7 I2=I2_7 I1=I1_7 I0=I0_7 O=O7
-.subckt mux S1=S1 S0=S0 I3=I3_6 I2=I2_6 I1=I1_6 I0=I0_6 O=O6
-.subckt mux S1=S1 S0=S0 I3=I3_5 I2=I2_5 I1=I1_5 I0=I0_5 O=O5
-.subckt mux S1=S1 S0=S0 I3=I3_4 I2=I2_4 I1=I1_4 I0=I0_4 O=O4
-.subckt mux S1=S1 S0=S0 I3=I3_3 I2=I2_3 I1=I1_3 I0=I0_3 O=O3
-.subckt mux S1=S1 S0=S0 I3=I3_2 I2=I2_2 I1=I1_2 I0=I0_2 O=O2
-.subckt mux S1=S1 S0=S0 I3=I3_1 I2=I2_1 I1=I1_1 I0=I0_1 O=O1
-.subckt mux S1=S1 S0=S0 I3=I3_0 I2=I2_0 I1=I1_0 I0=I0_0 O=O0
+.subckt mux_4comb S1=S1 S0=S0 I3=I3_7 I2=I2_7 I1=I1_7 I0=I0_7 O=O7
+.subckt mux_4comb S1=S1 S0=S0 I3=I3_6 I2=I2_6 I1=I1_6 I0=I0_6 O=O6
+.subckt mux_4comb S1=S1 S0=S0 I3=I3_5 I2=I2_5 I1=I1_5 I0=I0_5 O=O5
+.subckt mux_4comb S1=S1 S0=S0 I3=I3_4 I2=I2_4 I1=I1_4 I0=I0_4 O=O4
+.subckt mux_4comb S1=S1 S0=S0 I3=I3_3 I2=I2_3 I1=I1_3 I0=I0_3 O=O3
+.subckt mux_4comb S1=S1 S0=S0 I3=I3_2 I2=I2_2 I1=I1_2 I0=I0_2 O=O2
+.subckt mux_4comb S1=S1 S0=S0 I3=I3_1 I2=I2_1 I1=I1_1 I0=I0_1 O=O1
+.subckt mux_4comb S1=S1 S0=S0 I3=I3_0 I2=I2_0 I1=I1_0 I0=I0_0 O=O0
 .search libreria.blif
 .end
 
