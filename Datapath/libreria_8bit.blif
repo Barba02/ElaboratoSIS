@@ -51,6 +51,32 @@
 .search libreria.blif
 .end
 
+.model zero_5
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.subckt zero O=O7
+.subckt zero O=O6
+.subckt zero O=O5
+.subckt zero O=O4
+.subckt uno O=O3
+.subckt zero O=O2
+.subckt zero O=O1
+.subckt zero O=O0
+.search libreria.blif
+.end
+
+.model zero_25
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.subckt zero O=O7
+.subckt zero O=O6
+.subckt zero O=O5
+.subckt zero O=O4
+.subckt zero O=O3
+.subckt uno O=O2
+.subckt zero O=O1
+.subckt zero O=O0
+.search libreria.blif
+.end
+
 .model sommatore_8bit
 .inputs A7 A6 A5 A4 A3 A2 A1 A0 B7 B6 B5 B4 B3 B2 B1 B0
 .outputs O7 O6 O5 O4 O3 O2 O1 O0
