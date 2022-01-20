@@ -1,17 +1,3 @@
-.model not_8bit
-.inputs I7 I6 I5 I4 I3 I2 I1 I0
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt not I=I7 O=O7
-.subckt not I=I6 O=O6
-.subckt not I=I5 O=O5
-.subckt not I=I4 O=O4
-.subckt not I=I3 O=O3
-.subckt not I=I2 O=O2
-.subckt not I=I1 O=O1
-.subckt not I=I0 O=O0
-.search libreria.blif
-.end
-
 .model uno_8bit
 .outputs O7 O6 O5 O4 O3 O2 O1 O0
 .subckt zero O=O7
@@ -22,6 +8,19 @@
 .subckt zero O=O2
 .subckt zero O=O1
 .subckt uno O=O0
+.search libreria.blif
+.end
+
+.model zero_8bit
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.subckt zero O=O7
+.subckt zero O=O6
+.subckt zero O=O5
+.subckt zero O=O4
+.subckt zero O=O3
+.subckt zero O=O2
+.subckt zero O=O1
+.subckt zero O=O0
 .search libreria.blif
 .end
 
@@ -108,18 +107,41 @@
 .search libreria.blif
 .end
 
-.model demux_4comb_8bit
-.inputs S1 S0 I7 I6 I5 I4 I3 I2 I1 I0
-.outputs O3_7 O3_6 O3_5 O3_4 O3_3 O3_2 O3_1 O3_0 O2_7 O2_6 O2_5 O2_4 O2_3 O2_2 O2_1 O2_0 O1_7 O1_6 O1_5 O1_4 O1_3 O1_2 O1_1 O1_0 O0_7 O0_6 O0_5 O0_4 O0_3 O0_2 O0_1 O0_0
-.subckt demux_4comb S1=S1 S0=S0 I=I7 O3=O3_7 O2=O2_7 O1=O1_7 O0=O0_7
-.subckt demux_4comb S1=S1 S0=S0 I=I6 O3=O3_6 O2=O2_6 O1=O1_6 O0=O0_6
-.subckt demux_4comb S1=S1 S0=S0 I=I5 O3=O3_5 O2=O2_5 O1=O1_5 O0=O0_5
-.subckt demux_4comb S1=S1 S0=S0 I=I4 O3=O3_4 O2=O2_4 O1=O1_4 O0=O0_4
-.subckt demux_4comb S1=S1 S0=S0 I=I3 O3=O3_3 O2=O2_3 O1=O1_3 O0=O0_3
-.subckt demux_4comb S1=S1 S0=S0 I=I2 O3=O3_2 O2=O2_2 O1=O1_2 O0=O0_2
-.subckt demux_4comb S1=S1 S0=S0 I=I1 O3=O3_1 O2=O2_1 O1=O1_1 O0=O0_1
-.subckt demux_4comb S1=S1 S0=S0 I=I0 O3=O3_0 O2=O2_0 O1=O1_0 O0=O0_0
+.model not_8bit
+.inputs I7 I6 I5 I4 I3 I2 I1 I0
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.subckt not I=I7 O=O7
+.subckt not I=I6 O=O6
+.subckt not I=I5 O=O5
+.subckt not I=I4 O=O4
+.subckt not I=I3 O=O3
+.subckt not I=I2 O=O2
+.subckt not I=I1 O=O1
+.subckt not I=I0 O=O0
 .search libreria.blif
+.end
+
+.model sottrattore_8bit
+.inputs A7 A6 A5 A4 A3 A2 A1 A0 B7 B6 B5 B4 B3 B2 B1 B0
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.subckt not_8bit I7=B7 I6=B6 I5=B5 I4=B4 I3=B3 I2=B2 I1=B1 I0=B0 O7=b7 O6=b6 O5=b5 O4=b4 O3=b3 O2=b2 O1=b1 O0=b0
+.subckt uno_8bit O7=u7 O6=u6 O5=u5 O4=u4 O3=u3 O2=u2 O1=u1 O0=u0
+.subckt sommatore_8bit A7=b7 A6=b6 A5=b5 A4=b4 A3=b3 A2=b2 A1=b1 A0=b0 B7=u7 B6=u6 B5=u5 B4=u4 B3=u3 B2=u2 B1=u1 B0=u0 O7=s7 O6=s6 O5=s5 O4=s4 O3=s3 O2=s2 O1=s1 O0=s0
+.subckt sommatore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=s7 B6=s6 B5=s5 B4=s4 B3=s3 B2=s2 B1=s1 B0=s0 O7=O7 O6=O6 O5=O5 O4=O4 O3=O3 O2=O2 O1=O1 O0=O0
+.end
+
+.model valvola_basico
+.inputs A7 A6 A5 A4 A3 A2 A1 A0
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.subckt zero_25 O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
+.subckt sommatore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=z7 B6=z6 B5=z5 B4=z4 B3=z3 B2=z2 B1=z1 B0=z0 O7=O7 O6=O6 O5=O5 O4=O4 O3=O3 O2=O2 O1=O1 O0=O0
+.end
+
+.model valvola_acido
+.inputs A7 A6 A5 A4 A3 A2 A1 A0
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.subckt zero_5 O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
+.subckt sottrattore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=z7 B6=z6 B5=z5 B4=z4 B3=z3 B2=z2 B1=z1 B0=z0 O7=O7 O6=O6 O5=O5 O4=O4 O3=O3 O2=O2 O1=O1 O0=O0
 .end
 
 .model mux_2comb_8bit
@@ -134,29 +156,6 @@
 .subckt mux_2comb S=S I1=I1_1 I0=I0_1 O=O1
 .subckt mux_2comb S=S I1=I1_0 I0=I0_0 O=O0
 .search libreria.blif
-.end
-
-.model mux_4comb_8bit
-.inputs S1 S0 I3_7 I3_6 I3_5 I3_4 I3_3 I3_2 I3_1 I3_0 I2_7 I2_6 I2_5 I2_4 I2_3 I2_2 I2_1 I2_0 I1_7 I1_6 I1_5 I1_4 I1_3 I1_2 I1_1 I1_0 I0_7 I0_6 I0_5 I0_4 I0_3 I0_2 I0_1 I0_0
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt mux_4comb S1=S1 S0=S0 I3=I3_7 I2=I2_7 I1=I1_7 I0=I0_7 O=O7
-.subckt mux_4comb S1=S1 S0=S0 I3=I3_6 I2=I2_6 I1=I1_6 I0=I0_6 O=O6
-.subckt mux_4comb S1=S1 S0=S0 I3=I3_5 I2=I2_5 I1=I1_5 I0=I0_5 O=O5
-.subckt mux_4comb S1=S1 S0=S0 I3=I3_4 I2=I2_4 I1=I1_4 I0=I0_4 O=O4
-.subckt mux_4comb S1=S1 S0=S0 I3=I3_3 I2=I2_3 I1=I1_3 I0=I0_3 O=O3
-.subckt mux_4comb S1=S1 S0=S0 I3=I3_2 I2=I2_2 I1=I1_2 I0=I0_2 O=O2
-.subckt mux_4comb S1=S1 S0=S0 I3=I3_1 I2=I2_1 I1=I1_1 I0=I0_1 O=O1
-.subckt mux_4comb S1=S1 S0=S0 I3=I3_0 I2=I2_0 I1=I1_0 I0=I0_0 O=O0
-.search libreria.blif
-.end
-
-.model sottrattore_8bit
-.inputs A7 A6 A5 A4 A3 A2 A1 A0 B7 B6 B5 B4 B3 B2 B1 B0
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt not_8bit I7=B7 I6=B6 I5=B5 I4=B4 I3=B3 I2=B2 I1=B1 I0=B0 O7=b7 O6=b6 O5=b5 O4=b4 O3=b3 O2=b2 O1=b1 O0=b0
-.subckt uno_8bit O7=u7 O6=u6 O5=u5 O4=u4 O3=u3 O2=u2 O1=u1 O0=u0
-.subckt sommatore_8bit A7=b7 A6=b6 A5=b5 A4=b4 A3=b3 A2=b2 A1=b1 A0=b0 B7=u7 B6=u6 B5=u5 B4=u4 B3=u3 B2=u2 B1=u1 B0=u0 O7=s7 O6=s6 O5=s5 O4=s4 O3=s3 O2=s2 O1=s1 O0=s0
-.subckt sommatore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=s7 B6=s6 B5=s5 B4=s4 B3=s3 B2=s2 B1=s1 B0=s0 O7=O7 O6=O6 O5=O5 O4=O4 O3=O3 O2=O2 O1=O1 O0=O0
 .end
 
 .model maggiore_8bit
@@ -201,5 +200,16 @@
 .subckt registro A=A2 O=O2
 .subckt registro A=A1 O=O1
 .subckt registro A=A0 O=O0
+.search libreria.blif
+.end
+
+.model ph_buono
+.inputs A7 A6 A5 A4 A3 A2 A1 A0
+.outputs O
+.subckt sei_9375 O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
+.subckt maggiore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=z7 B6=z6 B5=z5 B4=z4 B3=z3 B2=z2 B1=z1 B0=z0 O=a
+.subckt otto O7=x7 O6=x6 O5=x5 O4=x4 O3=x3 O2=x2 O1=x1 O0=x0
+.subckt minore_uguale_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=x7 B6=x6 B5=x5 B4=x4 B3=x3 B2=x2 B1=x1 B0=x0 O=b
+.subckt and A=a B=b O=O
 .search libreria.blif
 .end
