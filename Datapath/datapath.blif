@@ -1,0 +1,7 @@
+.model datapath
+.inputs PHI7 PHI6 PHI5 PHI4 PHI3 PHI2 PHI1 PHI0
+.outputs PHO7 PHO6 PHO5 PHO4 PHO3 PHO2 PHO1 PHO0 NCLK7 NCLK6 NCLK5 NCLK4 NCLK3 NCLK2 NCLK1 NCLK0
+
+.search libreria.blif
+.search libreria_8bit.blif
+.end
