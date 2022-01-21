@@ -38,6 +38,13 @@
 1
 .end
 
+.model or
+.inputs A B
+.outputs O
+.names A B O
+00 0
+.end
+
 .model and
 .inputs A B
 .outputs O

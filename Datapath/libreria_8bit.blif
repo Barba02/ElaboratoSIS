@@ -50,12 +50,12 @@
 .search libreria.blif
 .end
 
-.model zero_5
+.model zero_5_c2
 .outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt zero O=O7
-.subckt zero O=O6
-.subckt zero O=O5
-.subckt zero O=O4
+.subckt uno O=O7
+.subckt uno O=O6
+.subckt uno O=O5
+.subckt uno O=O4
 .subckt uno O=O3
 .subckt zero O=O2
 .subckt zero O=O1
@@ -113,15 +113,6 @@
 .search libreria.blif
 .end
 
-.model sottrattore_8bit
-.inputs A7 A6 A5 A4 A3 A2 A1 A0 B7 B6 B5 B4 B3 B2 B1 B0
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt not_8bit I7=B7 I6=B6 I5=B5 I4=B4 I3=B3 I2=B2 I1=B1 I0=B0 O7=b7 O6=b6 O5=b5 O4=b4 O3=b3 O2=b2 O1=b1 O0=b0
-.subckt uno_8bit O7=u7 O6=u6 O5=u5 O4=u4 O3=u3 O2=u2 O1=u1 O0=u0
-.subckt sommatore_8bit A7=b7 A6=b6 A5=b5 A4=b4 A3=b3 A2=b2 A1=b1 A0=b0 B7=u7 B6=u6 B5=u5 B4=u4 B3=u3 B2=u2 B1=u1 B0=u0 O7=s7 O6=s6 O5=s5 O4=s4 O3=s3 O2=s2 O1=s1 O0=s0
-.subckt sommatore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=s7 B6=s6 B5=s5 B4=s4 B3=s3 B2=s2 B1=s1 B0=s0 O7=O7 O6=O6 O5=O5 O4=O4 O3=O3 O2=O2 O1=O1 O0=O0
-.end
-
 .model valvola_basico
 .inputs A7 A6 A5 A4 A3 A2 A1 A0
 .outputs O7 O6 O5 O4 O3 O2 O1 O0
@@ -132,8 +123,8 @@
 .model valvola_acido
 .inputs A7 A6 A5 A4 A3 A2 A1 A0
 .outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt zero_5 O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
-.subckt sottrattore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=z7 B6=z6 B5=z5 B4=z4 B3=z3 B2=z2 B1=z1 B0=z0 O7=O7 O6=O6 O5=O5 O4=O4 O3=O3 O2=O2 O1=O1 O0=O0
+.subckt zero_5_c2 O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
+.subckt sommatore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=z7 B6=z6 B5=z5 B4=z4 B3=z3 B2=z2 B1=z1 B0=z0 O7=O7 O6=O6 O5=O5 O4=O4 O3=O3 O2=O2 O1=O1 O0=O0
 .end
 
 .model mux_2comb_8bit
