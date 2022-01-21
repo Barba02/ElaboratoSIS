@@ -8,7 +8,9 @@
 .subckt ac_bs AC=VALVOLA_ACIDO BS=VALVOLA_BASICO O=d
 .subckt mux_2comb_8bit S=d I1_7=b7 I1_6=b6 I1_5=b5 I1_4=b4 I1_3=b3 I1_2=b2 I1_1=b1 I1_0=b0 I0_7=c7 I0_6=c6 I0_5=c5 I0_4=c4 I0_3=c3 I0_2=c2 I0_1=c0 I0_0=c0 O7=e7 O6=e6 O5=e5 O4=e4 O3=e3 O2=e2 O1=e1 O0=e0
 .subckt ph_buono A7=f7 A6=f6 A5=f5 A4=f4 A3=f3 A2=f2 A1=f1 A0=f0 O=CHIUDI
-.subckt mux_2comb_8bit S=CHIUDI I1_7=f7 I1_6=f6 I1_5=f5 I1_4=f4 I1_3=f3 I1_2=f2 I1_1=f1 I1_0=f0 I0_7=e7 I0_6=e6 I0_5=e5 I0_4=e4 I0_3=e3 I0_2=e2 I0_1=e0 I0_0=e0 O7=PHO7 O6=PHO6 O5=PHO5 O4=PHO4 O3=PHO3 O2=PHO2 O1=PHO1 O0=PHO0
+.names RST CHIUDI s
+00 0
+.subckt mux_2comb_8bit S=s I1_7=f7 I1_6=f6 I1_5=f5 I1_4=f4 I1_3=f3 I1_2=f2 I1_1=f1 I1_0=f0 I0_7=e7 I0_6=e6 I0_5=e5 I0_4=e4 I0_3=e3 I0_2=e2 I0_1=e0 I0_0=e0 O7=PHO7 O6=PHO6 O5=PHO5 O4=PHO4 O3=PHO3 O2=PHO2 O1=PHO1 O0=PHO0
 .search libreria.blif
 .search libreria_8bit.blif
 .end
