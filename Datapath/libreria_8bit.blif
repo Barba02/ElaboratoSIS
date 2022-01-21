@@ -99,20 +99,6 @@
 .search libreria.blif
 .end
 
-.model not_8bit
-.inputs I7 I6 I5 I4 I3 I2 I1 I0
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt not I=I7 O=O7
-.subckt not I=I6 O=O6
-.subckt not I=I5 O=O5
-.subckt not I=I4 O=O4
-.subckt not I=I3 O=O3
-.subckt not I=I2 O=O2
-.subckt not I=I1 O=O1
-.subckt not I=I0 O=O0
-.search libreria.blif
-.end
-
 .model valvola_basico
 .inputs A7 A6 A5 A4 A3 A2 A1 A0
 .outputs O7 O6 O5 O4 O3 O2 O1 O0

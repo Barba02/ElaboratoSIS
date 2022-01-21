@@ -52,13 +52,6 @@
 11 1
 .end
 
-.model not
-.inputs I
-.outputs O
-.names I O
-0 1
-.end
-
 .model xor
 .inputs A B
 .outputs O
