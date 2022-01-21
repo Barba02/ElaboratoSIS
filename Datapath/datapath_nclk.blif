@@ -1,11 +1,10 @@
-.model datapath
-.inputs CHIUDI RST
+.model prova
+.inputs RST CHIUDI
 .outputs NCLK7 NCLK6 NCLK5 NCLK4 NCLK3 NCLK2 NCLK1 NCLK0
 .subckt mux_2comb_8bit S=CHIUDI I1_7=NCLK7 I1_6=NCLK6 I1_5=NCLK5 I1_4=NCLK4 I1_3=NCLK3 I1_2=NCLK2 I1_1=NCLK1 I1_0=NCLK0 I0_7=i7 I0_6=i6 I0_5=i5 I0_4=i4 I0_3=i3 I0_2=i2 I0_1=i1 I0_0=i0 O7=g7 O6=g6 O5=g5 O4=g4 O3=g3 O2=g2 O1=g1 O0=g0
 .subckt zero_8bit O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
-.subckt mux_2comb_8bit S=RST I1_7=z7 I1_6=z6 I1_5=z5 I1_4=z4 I1_3=z3 I1_2=z2 I1_1=z1 I1_0=z0 I0_7=g7 I0_6=g6 I0_5=g5 I0_4=g4 I0_3=g3 I0_2=g2 I0_1=g0 I0_0=g0 O7=h7 O6=h6 O5=h5 O4=h4 O3=h3 O2=h2 O1=h1 O0=h0
+.subckt mux_2comb_8bit S=RST I1_7=z7 I1_6=z6 I1_5=z5 I1_4=z4 I1_3=z3 I1_2=z2 I1_1=z1 I1_0=z0 I0_7=g7 I0_6=g6 I0_5=g5 I0_4=g4 I0_3=g3 I0_2=g2 I0_1=g1 I0_0=g0 O7=h7 O6=h6 O5=h5 O4=h4 O3=h3 O2=h2 O1=h1 O0=h0
 .subckt registro_8bit A7=h7 A6=h6 A5=h5 A4=h4 A3=h3 A2=h2 A1=h1 A0=h0 O7=NCLK7 O6=NCLK6 O5=NCLK5 O4=NCLK4 O3=NCLK3 O2=NCLK2 O1=NCLK1 O0=NCLK0
 .subckt incrementatore_8bit A7=NCLK7 A6=NCLK6 A5=NCLK5 A4=NCLK4 A3=NCLK3 A2=NCLK2 A1=NCLK1 A0=NCLK0 O7=i7 O6=i6 O5=i5 O4=i4 O3=i3 O2=i2 O1=i1 O0=i0
-.search libreria.blif
 .search libreria_8bit.blif
 .end
