@@ -2,3 +2,7 @@
 - schema datapath jpg
 - disegno interfacce
 - minimize fsm/tutto (altre tecniche?/minimizzare tutto in un colpo?)
+- usa un cavo solo per fili multipli (clk/rst)
+- scrivi numero bit sui cavi
+- scrivi test in c
+- test su vm
