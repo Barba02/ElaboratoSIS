@@ -1,5 +1,5 @@
 - cambiare stg (togliere ultimo bit in input)
-- schema datapath jpg
+- schema datapath jpg (or nuovi)
 - disegno interfacce
 - minimize fsm/tutto (altre tecniche?/minimizzare tutto in un colpo?)
 - usa un cavo solo per fili multipli (clk/rst)
