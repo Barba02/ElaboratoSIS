@@ -1,8 +1,13 @@
-- cambiare stg (togliere ultimo bit in input)
-- schema datapath jpg (or nuovi)
-- disegno interfacce
-- minimize fsm/tutto (altre tecniche?/minimizzare tutto in un colpo?)
-- usa un cavo solo per fili multipli (clk/rst)
-- scrivi numero bit sui cavi
-- scrivi test in c
+BARBA
+- schema stg (togliere ultimo bit in input)
+- schema datapath .jpg (or nuovi, occhio a cavi multipli, num bit sui cavi)
+- schema interfacce
+
+BRIGHE
+- abstract relazione (esempi/traccia)
+
+
+- minimize vari (altre tecniche?/tutto in un colpo?)
+
 - test su vm
+- test auto .c

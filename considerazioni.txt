@@ -1,6 +1,5 @@
 - da errore bisogna prima resettare per tornare a ph_iniziale
-- con valvola_basico e valcola_acido entrambi a 0 il datapath manda in output
-- se il selettore è 11 tracciamo un filo come 00 (è impossibile quindi non modifichiamo il valore)
+- con valvola_basico e valcola_acido entrambi a 0 il datapath cosa manda in output
 - uno_8bit sarebbe 0.0625
 - al primo ciclo c'è sempre 0..0 perché arriva dal registro con il reset
 - or per evitare che conteggi anche se c'è errore
