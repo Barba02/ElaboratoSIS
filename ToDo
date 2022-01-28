@@ -9,5 +9,8 @@ BRIGHE
 
 - minimize vari (altre tecniche?/tutto in un colpo?)
 
+- espresso
 - test su vm
-- test auto .c
+- test automatico (subprocess)
+
+- chk vincoli pdf (tutto zero su reset: mux sull'uscita)
