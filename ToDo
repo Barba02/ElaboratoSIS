@@ -1,5 +1,6 @@
 BARBA
-- sistema datapath
+- fsm (aggiungi stato di lettura dell'input, altrimenti se si cambia input dopo reset non funziona)
+- sistema datapath (registri strani se non resettati)
 - schema stg (togliere ultimo bit in input)
 - schema datapath .jpg (or nuovi, occhio a cavi multipli, num bit sui cavi)
 - schema interfacce
@@ -12,6 +13,6 @@ BRIGHE
 
 - espresso
 - test su vm
-- test automatico
+- test automatico (chk risultati)
 
 - chk vincoli pdf (tutto zero su reset: mux sull'uscita)
