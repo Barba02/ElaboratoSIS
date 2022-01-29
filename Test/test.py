@@ -6,9 +6,7 @@ import subprocess as sp
 # data una stringa
 # restituisce la stessa stringa con gli spazi tra ogni caratteri
 def spaziatore(s):
-    tmp = ""
-    for i in range(len(s)-1):
-        tmp += s[i] + " "
+    tmp = "".join(s[i] + " " for i in range(len(s)-1))
     return tmp + s[len(s)-1]
 
 
@@ -32,10 +30,10 @@ def dec_to_bin_fp(n):
     d = n - i
     while i > 0:
         s = str(i % 2) + s
-        i = int(i / 2)
+        i //= 2
     while len(s) != 4:
         s = "0" + s
-    while d != 1 and d != 0:
+    while d not in [1, 0]:
         s += str(int(d * 2))
         d *= 2
         if d > 1.0:
@@ -125,46 +123,32 @@ def errore():
 # funzione che rappresenta lo stato iniziale e le sue transizioni
 def ph_iniziale():
     global state, rst, start, ph, nclk, eo
-    # si azzera il conteggio dei cicli di clock
-    nclk = 0
     # se rst è alzato si torna allo stato iniziale con tutti gli output a 0
     if rst == "1":
         eo.write("0 " * 19 + "0\n")
-    # nel caso rst sia abbassato
     else:
+        # si azzera il conteggio dei cicli di clock
+        nclk = 0
         # se start è basso rimango nello stato e stampo il ph dato in input e nclk (0)
         if start == "0":
             eo.write(f"0 0 0 0 {spaziatore(dec_to_bin_fp(ph))} {spaziatore(dec_to_bin_m(nclk))}\n")
-        # se start è alto inizia il calcolo
+        elif ph > 14:
+            state = "errore"
+            eo.write(f"0 1 0 0 {spaziatore(dec_to_bin_fp(ph))} {spaziatore(dec_to_bin_m(nclk))}\n")
+        elif 7 <= ph <= 8:
+            state = "fine"
+            eo.write(f"1 0 0 0 {spaziatore(dec_to_bin_fp(ph))} {spaziatore(dec_to_bin_m(nclk))}\n")
+        elif ph < 7:
+            state = "eroga_base"
+            eo.write(f"0 0 0 1 {spaziatore(dec_to_bin_fp(ph))} {spaziatore(dec_to_bin_m(nclk))}\n")
         else:
-            # se il ph in input è maggiore di 14 si va nello stato di errore con il relativo bit alzato e stampo il ph dato in input e nclk (0)
-            if ph > 14:
-                state = "errore"
-                eo.write(f"0 1 0 0 {spaziatore(dec_to_bin_fp(ph))} {spaziatore(dec_to_bin_m(nclk))}\n")
-            # se il ph è valido
-            else:
-                # nel caso sia già neutro passo allo stato di fine alzando corrispettivo bit e mettendo in output il ph dato con il nclk (0)
-                if 7 <= ph <= 8:
-                    state = "fine"
-                    eo.write(f"1 0 0 0 {spaziatore(dec_to_bin_fp(ph))} {spaziatore(dec_to_bin_m(nclk))}\n")
-                # altrimenti
-                else:
-                    # se la soluzione è acida, inizio ad erogare soluzione basica e alzo il bit della corrispondente valvola, stampando ph e nclk (0)
-                    if ph < 7:
-                        state = "eroga_base"
-                        eo.write(f"0 0 0 1 {spaziatore(dec_to_bin_fp(ph))} {spaziatore(dec_to_bin_m(nclk))}\n")
-                    # se la soluzione è basica, inizio ad erogare soluzione acida e alzo il bit della corrispondente valvola, stampando ph e nclk (0)
-                    else:
-                        state = "eroga_acido"
-                        eo.write(f"0 0 1 0 {spaziatore(dec_to_bin_fp(ph))} {spaziatore(dec_to_bin_m(nclk))}\n")
+            state = "eroga_acido"
+            eo.write(f"0 0 1 0 {spaziatore(dec_to_bin_fp(ph))} {spaziatore(dec_to_bin_m(nclk))}\n")
 
 
 # funzione che genera una stringa di 10 bit casuali per l'input
 def genera_input():
-    s = ""
-    for _ in range(10):
-        s += str(random.randrange(2))
-    return s
+    return "".join(str(random.randrange(2)) for _ in range(10))
 
 
 # funzione che svolge la routine stampare gli input sul file e richiamare le funzioni dello stato attuale
@@ -186,23 +170,18 @@ if __name__ == "__main__":
     nclk = 0
     # inizializzazione della fsm nello stato iniziale
     state = "ph_iniziale"
-    # creazione dei file dove scrivere gli input per sis e gli output che ci si aspetta
-    eo = open("expected_outputs.txt", "w")
-    inputs = open("inputs.txt", "w")
-    inputs.write("read_blif fsmd.blif\n")
-    # inizio della routine
-    user_input = genera_input()
-    while state != "fine":
-        loop()
-    loop()
-    # chiusura routine e chiusura del file con i comandi per sis
-    inputs.write("quit\n")
-    inputs.close()
-    eo.close()
-    # apertura del file in lettura e creazione dell'array delle linee
-    inputs = open("inputs.txt", "r")
-    ss = inputs.read().split("\n")
-    inputs.close()
+    with open("expected_outputs.txt", "w") as eo:
+        with open("inputs.txt", "w") as inputs:
+            inputs.write("read_blif fsmd.blif\n")
+            # inizio della routine
+            user_input = genera_input()
+            while state != "fine":
+                loop()
+            loop()
+            # chiusura routine e chiusura del file con i comandi per sis
+            inputs.write("quit\n")
+    with open("inputs.txt", "r") as inputs:
+        ss = inputs.read().split("\n")
     # creazione sottoprocesso di sis
     process = sp.Popen(["sis"], stdin=sp.PIPE, stdout=sp.PIPE, text=True)
     # esecuzione di ogni riga
@@ -211,27 +190,20 @@ if __name__ == "__main__":
         process.stdin.write(line)
     # recupero dell'output del sottoprocesso una volta terminato
     ss = str(process.communicate()[0])
-    # apertura file degli output in scrittura
-    outputs = open("outputs.txt", "w")
-    # parsing e scrittura di tutti gli output di sis
-    while (ss.find("Outputs") != -1):
-        s = ss[ss.find("Outputs")+9:ss.find("Outputs")+48] + "\n"
-        ss = ss[ss.find("Outputs")+48:]
-        outputs.write(s)
-    outputs.close()
-    # apertura dei due file di output in lettura
-    actual = open("outputs.txt", "r")
-    expected = open("expected_outputs.txt", "r")
-    # creazione degli array con gli output
-    a = actual.read().split("\n")
-    e = expected.read().split("\n")
-    actual.close()
+    with open("outputs.txt", "w") as outputs:
+        # parsing e scrittura di tutti gli output di sis
+        while "Outputs" in ss:
+            s = ss[ss.find("Outputs")+9:ss.find("Outputs")+48] + "\n"
+            ss = ss[ss.find("Outputs")+48:]
+            outputs.write(s)
+    with open("outputs.txt", "r") as actual:
+        expected = open("expected_outputs.txt", "r")
+        # creazione degli array con gli output
+        a = actual.read().split("\n")
+        e = expected.read().split("\n")
     expected.close()
     # conteggio dei test
-    passed = 0
-    for i in range(len(a)-1):
-        if a[i] == e[i]:
-            passed += 1
+    passed = sum(a[i] == e[i] for i in range(len(a)-1))
     # stampa percentuale di test superati
     passed = passed * 100 / (len(a) - 1)
     print("{:.2f}%".format(passed))
