@@ -1,4 +1,5 @@
 BARBA
+- sistema datapath
 - schema stg (togliere ultimo bit in input)
 - schema datapath .jpg (or nuovi, occhio a cavi multipli, num bit sui cavi)
 - schema interfacce
@@ -11,6 +12,6 @@ BRIGHE
 
 - espresso
 - test su vm
-- test automatico (subprocess)
+- test automatico
 
 - chk vincoli pdf (tutto zero su reset: mux sull'uscita)
