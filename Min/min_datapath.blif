@@ -3,134 +3,184 @@
 RST ERR
 .outputs PHO7 PHO6 PHO5 PHO4 PHO3 PHO2 PHO1 PHO0 NCLK7 NCLK6 NCLK5 NCLK4 NCLK3 \
 NCLK2 NCLK1 NCLK0 CHIUDI
-.latch    f7 PHO7 re NIL 0
-.latch    f6 PHO6 re NIL 0
-.latch    f5 PHO5 re NIL 0
-.latch    f4 PHO4 re NIL 0
-.latch    f3 PHO3 re NIL 0
-.latch    f2 PHO2 re NIL 0
-.latch    a1 PHO1 re NIL 0
-.latch    a0 PHO0 re NIL 0
-.latch    h7 NCLK7 re NIL 0
-.latch    h6 NCLK6 re NIL 0
-.latch    h5 NCLK5 re NIL 0
-.latch    h4 NCLK4 re NIL 0
-.latch    h3 NCLK3 re NIL 0
-.latch    h2 NCLK2 re NIL 0
-.latch    h1 NCLK1 re NIL 0
-.latch    h0 NCLK0 re NIL 0
-.names a7 a6 a5 a4 a3 a1 a0 [385] CHIUDI
-0111---- 1
-10000001 1
-.names RST PHI7 PHO7 a7
+.latch    f7 j7 re NIL 0
+.latch    f6 j6 re NIL 0
+.latch    f5 j5 re NIL 0
+.latch    f4 j4 re NIL 0
+.latch    f3 j3 re NIL 0
+.latch    f2 j2 re NIL 0
+.latch    a1 j1 re NIL 0
+.latch    a0 j0 re NIL 0
+.latch    h7 k7 re NIL 0
+.latch    h6 k6 re NIL 0
+.latch    h5 k5 re NIL 0
+.latch    h4 k4 re NIL 0
+.latch    h3 k3 re NIL 0
+.latch    h2 k2 re NIL 0
+.latch    h1 k1 re NIL 0
+.latch    h0 k0 re NIL 0
+.names RST j7 PHO7
+01 1
+.names RST j6 PHO6
+01 1
+.names RST j5 PHO5
+01 1
+.names RST j4 PHO4
+01 1
+.names RST j3 PHO3
+01 1
+.names RST j2 PHO2
+01 1
+.names RST j1 PHO1
+01 1
+.names RST j0 PHO0
+01 1
+.names RST k7 NCLK7
+01 1
+.names RST k6 NCLK6
+01 1
+.names RST k5 NCLK5
+01 1
+.names RST k4 NCLK4
+01 1
+.names RST k3 NCLK3
+01 1
+.names RST k2 NCLK2
+01 1
+.names RST k1 NCLK1
+01 1
+.names RST k0 NCLK0
+01 1
+.names a5 a2 a1 a0 [678] [805] [806] [809] CHIUDI
+1----110 1
+-0000--1 1
+.names PHI5 RST PHO5 a5
+--1 1
 11- 1
-0-1 1
-.names RST PHI6 PHO6 a6
+.names PHI2 RST PHO2 a2
+--1 1
 11- 1
-0-1 1
-.names RST PHI5 PHO5 a5
+.names PHI1 RST PHO1 a1
+--1 1
 11- 1
-0-1 1
-.names RST PHI4 PHO4 a4
+.names PHI0 RST PHO0 a0
+--1 1
 11- 1
-0-1 1
-.names RST PHI3 PHO3 a3
-11- 1
-0-1 1
-.names RST PHI1 PHO1 a1
-11- 1
-0-1 1
-.names RST PHI0 PHO0 a0
-11- 1
-0-1 1
 .names VALVOLA_ACIDO VALVOLA_BASICO d
 10 1
-.names RST ERR re
-1- 1
--1 1
-.names CHIUDI re s
-1- 1
--1 1
-.names a7 a6 d f6 f7
-100- 1
-11-1 1
-1-10 1
-0011 1
-.names a6 [355] f6
-11 1
-00 1
-.names a5 a4 a3 f4 f3 [388] f5
-11-1-- 1
-1-00-- 1
-10---1 1
-00---0 1
-01-00- 1
-.names a4 a3 d s f3 [387] f4
-1----1 1
-1-0-1- 1
-1-1-0- 1
-0-101- 1
-010-0- 1
-.names a3 [387] f3
-11 1
-00 1
-.names [385] [390] f2
-01 1
-10 1
-.names NCLK7 NCLK6 re h6 h5 [386] h7
-1--1-- 1
-100--- 1
-0--000 1
-.names NCLK6 NCLK5 re h5 [386] h6
-1--1- 1
-100-- 1
-0--00 1
-.names NCLK5 re [386] h5
-0-0 1
-101 1
-.names NCLK4 re h3 [272] [348] h4
---11- 1
-10-0- 1
---000 1
-.names NCLK3 re [348] h3
-0-0 1
-101 1
-.names NCLK2 NCLK1 re s h0 [348] h2
-1-0--1 1
-01-00- 1
-.names NCLK1 re s h0 h1
-1--1 1
-101- 1
-0-00 1
-.names NCLK0 re s h0
-0-0 1
-101 1
-.names NCLK4 NCLK3 NCLK2 NCLK1 NCLK0 [272]
-11111 1
-.names NCLK2 NCLK1 NCLK0 s [348]
-0--- 1
--0-- 1
---0- 1
----1 1
-.names a5 a4 a3 d f3 [355]
-01--- 1
--01-- 1
-1--1- 1
----01 1
---0-0 1
-.names PHI2 RST PHO2 [385]
-01- 1
--00 1
-.names s [272] [386]
-1- 1
--0 1
-.names d s f2 [387]
+.names RST ERR CHIUDI s
+1-- 1
 -1- 1
-0-1 1
-.names f4 f3 [388]
+--1 1
+.names [802] [809] f7
+11 1
+00 1
+.names a5 d f5 [637] [678] [805] f6
+--1-0- 1
+1-1--1 1
+-10--1 1
+-0-0-1 1
+1000-- 1
+.names a5 [803] f5
+11 1
+00 1
+.names a2 f3 f2 [682] [803] [806] [810] f4
+-1--0-- 1
+-----11 1
+-0--11- 1
+1-011-- 1
+.names [810] [816] f3
+11 1
+00 1
+.names a2 d s [814] f2
+11-- 1
+1-1- 1
+--00 1
+.names NCLK7 s k7 [793] [818] h7
+1--1- 1
+-01-1 1
+-00-0 1
+.names NCLK6 s k6 [793] [811] h6
+1--1- 1
+-01-1 1
+-00-0 1
+.names NCLK5 s k5 [793] [808] h5
+1--1- 1
+-01-1 1
+-00-0 1
+.names NCLK4 s k4 [717] [793] h4
+1---1 1
+-001- 1
+-010- 1
+.names NCLK3 s k3 k2 [717] [793] [813] h3
+1----1- 1
+-01-0-- 1
+-0-10-0 1
+.names NCLK2 s k2 [793] [813] h2
+1--1- 1
+-01-1 1
+-00-0 1
+.names NCLK1 s k1 k0 [793] h1
+1---1 1
+-001- 1
+-010- 1
+.names NCLK0 s k0 [793] h0
+-00- 1
+1--1 1
+.names a5 [641] [805] [637]
+111 1
+.names PHO3 a2 [806] [641]
+111 1
+.names a5 [682] [805] [678]
+1-- 1
+-1- 1
+--1 1
+.names [806] [816] [682]
+1- 1
+-1 1
+.names k3 k2 [813] [717]
+110 1
+.names ERR s [793]
+01 1
+.names d s [637] [678] [802]
+-1-- 1
+0-0- 1
+1--1 1
+.names d s [641] [682] [803]
+-1-- 1
+0-0- 1
+1--1 1
+.names PHI6 RST PHO6 [805]
+--1 1
+11- 1
+.names PHI4 RST PHO4 [806]
+--1 1
+11- 1
+.names PHI3 RST [807]
 0- 1
 -0 1
-.names d s [390]
+.names k4 [717] [808]
+0- 1
+-0 1
+.names PHI7 RST PHO7 [809]
+--1 1
+11- 1
+.names s [814] [810]
 1- 1
+-0 1
+.names k5 [808] [811]
+0- 1
+-1 1
+.names k1 k0 [813]
+0- 1
+-0 1
+.names a2 d [814]
+1- 1
+-1 1
+.names PHO3 [807] [816]
+1- 1
+-0 1
+.names k6 [811] [818]
+0- 1
 -1 1
 .end
