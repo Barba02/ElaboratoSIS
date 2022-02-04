@@ -24,19 +24,6 @@
 .search libreria.blif
 .end
 
-.model sei_6875
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt zero O=O7
-.subckt uno O=O6
-.subckt uno O=O5
-.subckt zero O=O4
-.subckt uno O=O3
-.subckt zero O=O2
-.subckt uno O=O1
-.subckt uno O=O0
-.search libreria.blif
-.end
-
 .model sei_9375
 .outputs O7 O6 O5 O4 O3 O2 O1 O0
 .subckt zero O=O7
@@ -57,19 +44,6 @@
 .subckt zero O=O5
 .subckt zero O=O4
 .subckt zero O=O3
-.subckt zero O=O2
-.subckt zero O=O1
-.subckt zero O=O0
-.search libreria.blif
-.end
-
-.model otto_5
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt uno O=O7
-.subckt zero O=O6
-.subckt zero O=O5
-.subckt zero O=O4
-.subckt uno O=O3
 .subckt zero O=O2
 .subckt zero O=O1
 .subckt zero O=O0
@@ -204,17 +178,6 @@
 .subckt sei_9375 O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
 .subckt maggiore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=z7 B6=z6 B5=z5 B4=z4 B3=z3 B2=z2 B1=z1 B0=z0 O=a
 .subckt otto O7=x7 O6=x6 O5=x5 O4=x4 O3=x3 O2=x2 O1=x1 O0=x0
-.subckt minore_uguale_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=x7 B6=x6 B5=x5 B4=x4 B3=x3 B2=x2 B1=x1 B0=x0 O=b
-.subckt and A=a B=b O=O
-.search libreria.blif
-.end
-
-.model ph_quasi_neutro
-.inputs A7 A6 A5 A4 A3 A2 A1 A0
-.outputs O
-.subckt sei_6875 O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
-.subckt maggiore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=z7 B6=z6 B5=z5 B4=z4 B3=z3 B2=z2 B1=z1 B0=z0 O=a
-.subckt otto_5 O7=x7 O6=x6 O5=x5 O4=x4 O3=x3 O2=x2 O1=x1 O0=x0
 .subckt minore_uguale_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=x7 B6=x6 B5=x5 B4=x4 B3=x3 B2=x2 B1=x1 B0=x0 O=b
 .subckt and A=a B=b O=O
 .search libreria.blif

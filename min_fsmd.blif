@@ -3,15 +3,15 @@
 .outputs FINE_OPERAZIONE ERRORE_SENSORE VALVOLA_ACIDO VALVOLA_BASICO \
 PH_FINALE7 PH_FINALE6 PH_FINALE5 PH_FINALE4 PH_FINALE3 PH_FINALE2 PH_FINALE1 \
 PH_FINALE0 NCLK7 NCLK6 NCLK5 NCLK4 NCLK3 NCLK2 NCLK1 NCLK0
-.latch    VALVOLA_ACIDO t re NIL 0
-.latch    PH_FINALE7 o7 re NIL 0
-.latch    PH_FINALE6 o6 re NIL 0
-.latch    PH_FINALE5 o5 re NIL 0
-.latch    PH_FINALE4 o4 re NIL 0
-.latch    PH_FINALE3 o3 re NIL 0
-.latch    PH_FINALE2 o2 re NIL 0
-.latch    PH_FINALE1 o1 re NIL 0
-.latch    PH_FINALE0 o0 re NIL 0
+.latch    VALVOLA_ACIDO h re NIL 0
+.latch    PH_FINALE7 c7 re NIL 0
+.latch    PH_FINALE6 c6 re NIL 0
+.latch    PH_FINALE5 c5 re NIL 0
+.latch    PH_FINALE4 c4 re NIL 0
+.latch    PH_FINALE3 c3 re NIL 0
+.latch    PH_FINALE2 c2 re NIL 0
+.latch    PH_FINALE1 c1 re NIL 0
+.latch    PH_FINALE0 c0 re NIL 0
 .latch    NCLK7 l7 re NIL 0
 .latch    NCLK6 l6 re NIL 0
 .latch    NCLK5 l5 re NIL 0
@@ -21,60 +21,54 @@ PH_FINALE0 NCLK7 NCLK6 NCLK5 NCLK4 NCLK3 NCLK2 NCLK1 NCLK0
 .latch    NCLK1 l1 re NIL 0
 .latch    NCLK0 l0 re NIL 0
 .latch    VALVOLA_BASICO LatchOut_v11   0
-.latch    [504] LatchOut_v12   1
-.latch    [505] LatchOut_v13   1
-.names RST pH7 pH6 pH5 pH4 c LatchOut_v12 [505] LatchOut_v13 [711] [714] \
+.latch    [3711] LatchOut_v12   1
+.latch    [3712] LatchOut_v13   1
+.names pH7 pH6 pH5 pH4 c LatchOut_v12 [3712] [3887] [3891] [3892] \
 FINE_OPERAZIONE
-0----1--0-- 1
-0-----1-0-- 1
-------10-0- 1
--1000-10--0 1
-.names START pH7 LatchOut_v12 [659] [708] [711] [714] ERRORE_SENSORE
---01--- 1
-11-1-0- 1
-11-10-1 1
-.names [505] FINE_OPERAZIONE VALVOLA_BASICO VALVOLA_ACIDO
+----1---0- 1
+-----1--0- 1
+-----100-- 1
+1000-10--0 1
+.names START pH7 [3645] LatchOut_v12 [3885] [3887] [3892] ERRORE_SENSORE
+--10--- 1
+111--0- 1
+111-0-1 1
+.names [3712] FINE_OPERAZIONE VALVOLA_BASICO VALVOLA_ACIDO
 000 1
-.names RST START pH7 c LatchOut_v12 LatchOut_v11 [659] [711] VALVOLA_BASICO
-0--0-1-- 1
--10-1-11 1
-.names pH7 o7 o6 [420] [419] [427] [659] [710] PH_FINALE7
--1--1--- 1
-1-----1- 1
--1-1-1-- 1
--0-0-1-- 1
--10--0-1 1
-.names pH6 o6 o5 [420] [427] [659] [693] [715] [718] PH_FINALE6
----01---- 1
-1----1--- 1
--1-----1- 1
--11-1---- 1
--0----0-0 1
-.names pH5 o5 [419] [427] o4 [659] [693] [715] PH_FINALE5
-1----1-- 1
--1-----1 1
--0-10--- 1
---1-1-0- 1
-.names pH4 o4 [659] [710] [717] PH_FINALE4
-1-1-- 1
--0--1 1
--1-10 1
-.names pH3 ccc o3 o2 [427] [659] [700] [709] [710] PH_FINALE3
-----1---- 1
-1----1--- 1
---01--1-- 1
---10---0- 1
--11-----1 1
-.names pH2 o2 [659] [709] [710] PH_FINALE2
-1-1-- 1
--0-0- 1
--1-11 1
-.names pH1 o1 [659] [710] PH_FINALE1
+.names RST START pH7 c [3645] LatchOut_v12 LatchOut_v11 [3887] VALVOLA_BASICO
+0--0--1- 1
+-10-11-1 1
+.names pH7 i7 c7 [3645] [3649] j PH_FINALE7
+1--1-- 1
+--1-1- 1
+-1---0 1
+.names pH6 i6 [3645] [3649] c6 j PH_FINALE6
+1-1--- 1
+---11- 1
+-1---0 1
+.names pH5 i5 [3645] [3649] c5 j PH_FINALE5
+1-1--- 1
+---11- 1
+-1---0 1
+.names pH4 i4 [3645] [3649] c4 j PH_FINALE4
+1-1--- 1
+---11- 1
+-1---0 1
+.names pH3 c3 [3645] [3649] j [3893] PH_FINALE3
+1-1--- 1
+-1-1-- 1
+-0--01 1
+-1--00 1
+.names pH2 [3645] [3649] c2 j [3884] PH_FINALE2
+11---- 1
+--11-- 1
+----01 1
+.names pH1 c1 [3645] [3891] PH_FINALE1
 1-1- 1
--1-1 1
-.names pH0 o0 [659] [710] PH_FINALE0
+-1-0 1
+.names pH0 c0 [3645] [3891] PH_FINALE0
 1-1- 1
--1-1 1
+-1-0 1
 .names RST NCLK6 l7 l6 NCLK7
 -11- 1
 0-10 1
@@ -83,89 +77,107 @@ FINE_OPERAZIONE
 -11- 1
 0-10 1
 0001 1
-.names RST l5 [309] [700] [716] NCLK5
--1--1 1
-010-- 1
--011- 1
-.names RST NCLK3 NCLK0 l4 l3 [309] NCLK4
---1--1 1
-0--1-0 1
-00--10 1
+.names RST l5 [3895] NCLK5
+-00 1
+011 1
+.names RST NCLK3 NCLK0 [3502] l4 l3 NCLK4
+--11-- 1
+0--01- 1
+00-0-1 1
 .names RST NCLK2 l3 l2 NCLK3
 -11- 1
 0-10 1
 0001 1
-.names RST NCLK1 l2 l1 NCLK2
--11- 1
-0-10 1
-0001 1
-.names RST NCLK0 l1 l0 NCLK1
--11- 1
-0-10 1
-0001 1
-.names l0 [700] [716] NCLK0
-01- 1
-1-1 1
-.names ccc o7 o6 o5 o3 o2 o1 o0 [420] c
-1-------- 1
--1--0---0 1
--01111--- 1
--1---0000 1
-.names o7 o6 o3 o2 o1 o0 [420] [718] ccc
-01-----0 1
-1-00000- 1
-.names o6 o5 o4 [420]
-1-- 1
--1- 1
---1 1
-.names [709] [710] [717] [718] [419]
--10- 1
-0--1 1
-.names o3 t [700] [427]
+.names RST j l2 l1 l0 [3894] NCLK2
+--1--1 1
+0-10-- 1
+-0011- 1
+.names j l1 l0 [3894] NCLK1
+-1-1 1
+001- 1
+.names RST j l0 NCLK0
+-00 1
 011 1
-.names l4 l3 l2 l1 l0 [309]
+.names c3 c1 c0 i7 i6 i5 i4 [3884] c
+---0111- 1
+10010000 1
+.names c7 c6 i6 h [3648] i7
+100-- 1
+11-1- 1
+1-10- 1
+0011- 1
+0-000 1
+.names c6 [3648] [3896] i6
+11- 1
+1-0 1
+001 1
+.names i4 c5 c4 [3648] [3886] [3890] [3897] i5
+-1-1--- 1
+---0-0- 1
+----1-0 1
+0-11--- 1
+.names c3 c4 h [3886] i4
+111- 1
+001- 1
+-101 1
+-000 1
+.names RST LatchOut_v13 [3645]
+01 1
+.names j [3891] [3649]
+10 1
+.names c3 c1 c0 c7 c6 c2 [3890] [3891] [3897] j
+-------1- 1
+---01---0 1
+0001000-- 1
+.names l4 l3 l2 l1 l0 [3502]
 11111 1
-.names RST START ERRORE_SENSORE LatchOut_v13 [505]
+.names c3 i4 h [3897] [3648]
+1-1- 1
+-10- 1
+--01 1
+.names RST START ERRORE_SENSORE LatchOut_v13 [3712]
 1--- 1
 --1- 1
 -0-1 1
-.names [505] FINE_OPERAZIONE ERRORE_SENSORE [504]
+.names [3712] FINE_OPERAZIONE ERRORE_SENSORE [3711]
 -1- 1
 1-0 1
-.names RST LatchOut_v13 [659]
-01 1
-.names o3 o2 [709] [693]
-0-- 1
--0- 1
---1 1
-.names ccc [710] [700]
-01 1
-.names pH6 pH5 [708]
+.names c2 h [3893] [3884]
+--0 1
+11- 1
+.names pH6 pH5 [3885]
 0- 1
 -0 1
-.names t [700] [709]
-1- 1
+.names c3 c2 [3886]
+0- 1
 -0 1
-.names RST [659] [710]
-00 1
-.names pH4 [708] [711]
+.names pH4 [3885] [3887]
 0- 1
 -1 1
-.names pH3 pH2 pH1 pH0 [714]
+.names c5 c4 [3890]
+1- 1
+-1 1
+.names RST LatchOut_v13 [3891]
+1- 1
+-1 1
+.names pH3 pH2 pH1 pH0 [3892]
 1--- 1
 -1-- 1
 --1- 1
 ---1 1
-.names [419] [427] o4 [715]
-1-- 1
--11 1
-.names RST ccc [659] [716]
---1 1
-01- 1
-.names [427] [693] [717]
+.names c2 h [3893]
+1- 1
+-1 1
+.names RST NCLK0 l0 [3894]
+-1- 1
+0-0 1
+.names j [3502] [3895]
 1- 1
 -0 1
-.names o5 o4 [718]
+.names h [3890] [3896]
+0- 1
+-0 1
+.names c5 c4 [3897]
 0- 1
 -0 1
 .end
