@@ -21,120 +21,120 @@ NCLK0
 .latch    NCLK2 l2 re NIL 0
 .latch    NCLK1 l1 re NIL 0
 .latch    NCLK0 l0 re NIL 0
-.names ccc o7 o6 o5 o3 o2 o1 o0 [2341] CHIUDI
+.names ccc o7 o6 o5 o3 o2 o1 o0 [420] CHIUDI
 1-------- 1
 -1--0---0 1
 -01111--- 1
 -1---0000 1
-.names pH7 o7 o6 [2340] [2341] [2343] [2347] [2377] PH_FINALE7
+.names pH7 o7 o6 [419] [420] [422] [427] [457] PH_FINALE7
 -1-1---- 1
 1----1-- 1
 -1--1-1- 1
 -0--0-1- 1
 -10---01 1
-.names pH6 o6 o5 [2341] [2343] [2347] [2368] [2379] [2381] PH_FINALE6
+.names pH6 o6 o5 [420] [422] [427] [448] [459] [461] PH_FINALE6
 1---1---- 1
 ---0-1--- 1
 -1-----1- 1
 -11--1--- 1
 -0----0-0 1
-.names pH5 o5 o4 [2340] [2343] [2347] [2368] [2379] PH_FINALE5
+.names pH5 o5 o4 [419] [422] [427] [448] [459] PH_FINALE5
 1---1--- 1
 -1-----1 1
 -00--1-- 1
 --11--0- 1
-.names pH4 o4 [2343] [2377] [2380] PH_FINALE4
+.names pH4 o4 [422] [457] [460] PH_FINALE4
 1-1-- 1
 -0--1 1
 -1-10 1
-.names pH3 ccc o3 o2 [2343] [2346] [2347] [2377] [2385] PH_FINALE3
+.names pH3 ccc o3 o2 [422] [426] [427] [457] [465] PH_FINALE3
 ------1-- 1
 1---1---- 1
 --10-1--- 1
 -11----1- 1
 --01----1 1
-.names pH2 o2 [2343] [2346] [2377] PH_FINALE2
+.names pH2 o2 [422] [426] [457] PH_FINALE2
 1-1-- 1
 -0-1- 1
 -1-01 1
-.names pH1 o1 [2343] [2377] PH_FINALE1
+.names pH1 o1 [422] [457] PH_FINALE1
 1-1- 1
 -1-1 1
-.names pH0 o0 [2343] [2377] PH_FINALE0
+.names pH0 o0 [422] [457] PH_FINALE0
 1-1- 1
 -1-1 1
-.names o7 o6 o3 o2 o1 o0 [2341] [2381] ccc
+.names RST NCLK6 l7 l6 NCLK7
+-11- 1
+0-10 1
+0001 1
+.names RST NCLK5 l6 l5 NCLK6
+-11- 1
+0-10 1
+0001 1
+.names RST l5 [462] NCLK5
+011 1
+000 1
+.names RST NCLK3 NCLK0 l4 l3 [309] NCLK4
+--1--1 1
+0--1-0 1
+00--10 1
+.names RST NCLK2 l3 l2 NCLK3
+-11- 1
+0-10 1
+0001 1
+.names RST NCLK1 l2 l1 NCLK2
+-11- 1
+0-10 1
+0001 1
+.names RST NCLK0 l1 l0 NCLK1
+-11- 1
+0-10 1
+0001 1
+.names RST l0 [458] NCLK0
+011 1
+000 1
+.names o7 o6 o3 o2 o1 o0 [420] [461] ccc
 01-----0 1
 1-00000- 1
 .names VALVOLA_ACIDO VALVOLA_BASICO e
 10 1
-.names RST l7 l6 NCLK6 NCLK7
--1-1 1
-010- 1
-0010 1
-.names RST l6 l5 NCLK5 NCLK6
--1-1 1
-010- 1
-0010 1
-.names RST l5 [2382] NCLK5
-011 1
-000 1
-.names RST l4 l3 NCLK3 NCLK0 [2230] NCLK4
-----11 1
-01---0 1
-0-10-0 1
-.names RST l3 l2 NCLK2 NCLK3
--1-1 1
-010- 1
-0010 1
-.names RST l2 l1 NCLK1 NCLK2
--1-1 1
-010- 1
-0010 1
-.names RST l1 l0 NCLK0 NCLK1
--1-1 1
-010- 1
-0010 1
-.names RST l0 [2378] NCLK0
-011 1
-000 1
-.names l4 l3 l2 l1 l0 [2230]
+.names l4 l3 l2 l1 l0 [309]
 11111 1
-.names [2346] [2377] [2380] [2381] [2340]
+.names [426] [457] [460] [461] [419]
 -10- 1
 1--1 1
-.names o6 o5 o4 [2341]
+.names o6 o5 o4 [420]
 1-- 1
 -1- 1
 --1 1
-.names RST ERRORE_SENSORE SELECT_PH_REG [2343]
+.names RST ERRORE_SENSORE SELECT_PH_REG [422]
 01- 1
 0-1 1
-.names t [2385] [2346]
+.names t [465] [426]
 01 1
-.names o3 t [2385] [2347]
+.names o3 t [465] [427]
 011 1
-.names o3 o2 [2346] [2368]
+.names o3 o2 [426] [448]
 0-- 1
 -0- 1
 --0 1
-.names RST [2343] [2377]
+.names RST [422] [457]
 00 1
-.names SELECT_PH_REG ccc [2378]
+.names SELECT_PH_REG ccc [458]
 1- 1
 -1 1
-.names o4 [2340] [2347] [2379]
+.names o4 [419] [427] [459]
 -1- 1
 1-1 1
-.names [2347] [2368] [2380]
+.names [427] [448] [460]
 1- 1
 -0 1
-.names o5 o4 [2381]
+.names o5 o4 [461]
 0- 1
 -0 1
-.names [2230] [2378] [2382]
+.names [309] [458] [462]
 0- 1
 -1 1
-.names ccc [2377] [2385]
+.names ccc [457] [465]
 01 1
 .end

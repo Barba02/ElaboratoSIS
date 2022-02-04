@@ -1,5 +1,4 @@
 BARBA
-- nclock senza ultimo mux
 - schema datapath .jpg (occhio a cavi multipli, num bit sui cavi)
 - schema interfacce
 
@@ -7,9 +6,7 @@ BRIGHE
 - abstract relazione (esempi/traccia)
 
 
-- minimize vari (altre tecniche?/tutto in un colpo?)
-
 - espresso
 - test su vm
-- minimizzazione random
 - chk vincoli pdf
+- minimizzazione random (spezza datapath/tutto in un colpo)
