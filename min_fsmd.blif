@@ -21,52 +21,51 @@ PH_FINALE0 NCLK7 NCLK6 NCLK5 NCLK4 NCLK3 NCLK2 NCLK1 NCLK0
 .latch    NCLK1 l1 re NIL 0
 .latch    NCLK0 l0 re NIL 0
 .latch    VALVOLA_BASICO LatchOut_v11   0
-.latch    [3711] LatchOut_v12   1
-.latch    [3712] LatchOut_v13   1
-.names pH7 pH6 pH5 pH4 c LatchOut_v12 [3712] [3887] [3891] [3892] \
-FINE_OPERAZIONE
+.latch    [450] LatchOut_v12   1
+.latch    [451] LatchOut_v13   1
+.names pH7 pH6 pH5 pH4 c LatchOut_v12 [451] [626] [630] [631] FINE_OPERAZIONE
 ----1---0- 1
 -----1--0- 1
 -----100-- 1
 1000-10--0 1
-.names START pH7 [3645] LatchOut_v12 [3885] [3887] [3892] ERRORE_SENSORE
+.names START pH7 [384] LatchOut_v12 [624] [626] [631] ERRORE_SENSORE
 --10--- 1
 111--0- 1
 111-0-1 1
-.names [3712] FINE_OPERAZIONE VALVOLA_BASICO VALVOLA_ACIDO
+.names [451] FINE_OPERAZIONE VALVOLA_BASICO VALVOLA_ACIDO
 000 1
-.names RST START pH7 c [3645] LatchOut_v12 LatchOut_v11 [3887] VALVOLA_BASICO
+.names RST START pH7 c [384] LatchOut_v12 LatchOut_v11 [626] VALVOLA_BASICO
 0--0--1- 1
 -10-11-1 1
-.names pH7 i7 c7 [3645] [3649] j PH_FINALE7
+.names pH7 i7 c7 [384] [388] j PH_FINALE7
 1--1-- 1
 --1-1- 1
 -1---0 1
-.names pH6 i6 [3645] [3649] c6 j PH_FINALE6
+.names pH6 i6 [384] [388] c6 j PH_FINALE6
 1-1--- 1
 ---11- 1
 -1---0 1
-.names pH5 i5 [3645] [3649] c5 j PH_FINALE5
+.names pH5 i5 [384] [388] c5 j PH_FINALE5
 1-1--- 1
 ---11- 1
 -1---0 1
-.names pH4 i4 [3645] [3649] c4 j PH_FINALE4
+.names pH4 i4 [384] [388] c4 j PH_FINALE4
 1-1--- 1
 ---11- 1
 -1---0 1
-.names pH3 c3 [3645] [3649] j [3893] PH_FINALE3
+.names pH3 c3 [384] [388] j [632] PH_FINALE3
 1-1--- 1
 -1-1-- 1
 -0--01 1
 -1--00 1
-.names pH2 [3645] [3649] c2 j [3884] PH_FINALE2
+.names pH2 [384] [388] c2 j [623] PH_FINALE2
 11---- 1
 --11-- 1
 ----01 1
-.names pH1 c1 [3645] [3891] PH_FINALE1
+.names pH1 c1 [384] [630] PH_FINALE1
 1-1- 1
 -1-0 1
-.names pH0 c0 [3645] [3891] PH_FINALE0
+.names pH0 c0 [384] [630] PH_FINALE0
 1-1- 1
 -1-0 1
 .names RST NCLK6 l7 l6 NCLK7
@@ -77,10 +76,10 @@ FINE_OPERAZIONE
 -11- 1
 0-10 1
 0001 1
-.names RST l5 [3895] NCLK5
+.names RST l5 [634] NCLK5
 -00 1
 011 1
-.names RST NCLK3 NCLK0 [3502] l4 l3 NCLK4
+.names RST NCLK3 NCLK0 [241] l4 l3 NCLK4
 --11-- 1
 0--01- 1
 00-0-1 1
@@ -88,96 +87,96 @@ FINE_OPERAZIONE
 -11- 1
 0-10 1
 0001 1
-.names RST j l2 l1 l0 [3894] NCLK2
+.names RST j l2 l1 l0 [633] NCLK2
 --1--1 1
 0-10-- 1
 -0011- 1
-.names j l1 l0 [3894] NCLK1
+.names j l1 l0 [633] NCLK1
 -1-1 1
 001- 1
 .names RST j l0 NCLK0
 -00 1
 011 1
-.names c3 c1 c0 i7 i6 i5 i4 [3884] c
+.names c3 c1 c0 i7 i6 i5 i4 [623] c
 ---0111- 1
 10010000 1
-.names c7 c6 i6 h [3648] i7
+.names c7 c6 i6 h [387] i7
 100-- 1
 11-1- 1
 1-10- 1
 0011- 1
 0-000 1
-.names c6 [3648] [3896] i6
+.names c6 [387] [635] i6
 11- 1
 1-0 1
 001 1
-.names i4 c5 c4 [3648] [3886] [3890] [3897] i5
+.names i4 c5 c4 [387] [625] [629] [636] i5
 -1-1--- 1
 ---0-0- 1
 ----1-0 1
 0-11--- 1
-.names c3 c4 h [3886] i4
+.names c3 c4 h [625] i4
 111- 1
 001- 1
 -101 1
 -000 1
-.names RST LatchOut_v13 [3645]
+.names RST LatchOut_v13 [384]
 01 1
-.names j [3891] [3649]
+.names j [630] [388]
 10 1
-.names c3 c1 c0 c7 c6 c2 [3890] [3891] [3897] j
+.names c3 c1 c0 c7 c6 c2 [629] [630] [636] j
 -------1- 1
 ---01---0 1
 0001000-- 1
-.names l4 l3 l2 l1 l0 [3502]
+.names l4 l3 l2 l1 l0 [241]
 11111 1
-.names c3 i4 h [3897] [3648]
+.names c3 i4 h [636] [387]
 1-1- 1
 -10- 1
 --01 1
-.names RST START ERRORE_SENSORE LatchOut_v13 [3712]
+.names RST START ERRORE_SENSORE LatchOut_v13 [451]
 1--- 1
 --1- 1
 -0-1 1
-.names [3712] FINE_OPERAZIONE ERRORE_SENSORE [3711]
+.names [451] FINE_OPERAZIONE ERRORE_SENSORE [450]
 -1- 1
 1-0 1
-.names c2 h [3893] [3884]
+.names c2 h [632] [623]
 --0 1
 11- 1
-.names pH6 pH5 [3885]
+.names pH6 pH5 [624]
 0- 1
 -0 1
-.names c3 c2 [3886]
+.names c3 c2 [625]
 0- 1
 -0 1
-.names pH4 [3885] [3887]
+.names pH4 [624] [626]
 0- 1
 -1 1
-.names c5 c4 [3890]
+.names c5 c4 [629]
 1- 1
 -1 1
-.names RST LatchOut_v13 [3891]
+.names RST LatchOut_v13 [630]
 1- 1
 -1 1
-.names pH3 pH2 pH1 pH0 [3892]
+.names pH3 pH2 pH1 pH0 [631]
 1--- 1
 -1-- 1
 --1- 1
 ---1 1
-.names c2 h [3893]
+.names c2 h [632]
 1- 1
 -1 1
-.names RST NCLK0 l0 [3894]
+.names RST NCLK0 l0 [633]
 -1- 1
 0-0 1
-.names j [3502] [3895]
+.names j [241] [634]
 1- 1
 -0 1
-.names h [3890] [3896]
+.names h [629] [635]
 0- 1
 -0 1
-.names c5 c4 [3897]
+.names c5 c4 [636]
 0- 1
 -0 1
 .end
