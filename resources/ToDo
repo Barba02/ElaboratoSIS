@@ -1,4 +1,5 @@
 BARBA
+- disegna componenti interni
 - schema datapath .jpg (occhio a cavi multipli, num bit sui cavi)
 - schema interfacce
 
@@ -6,7 +7,6 @@ BRIGHE
 - abstract relazione (esempi/traccia)
 
 
-- espresso
 - test su vm
-- chk vincoli pdf
+- chk organizzazione directory
 - minimizzazione random (spezza datapath/tutto in un colpo)
