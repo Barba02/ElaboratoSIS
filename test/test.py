@@ -188,7 +188,8 @@ def loop():
 
 
 if __name__ == "__main__":
-    for _ in range(32):
+    tot = 0
+    for _ in range(64):
         # inizializzazione del datapath
         ph = 0
         registro_ph = 0
@@ -237,4 +238,7 @@ if __name__ == "__main__":
                 print("row", i+1)
         # stampa percentuale di test superati
         passed = passed * 100 / (len(a) - 1)
+        tot += passed
         print("{:.2f}%".format(passed))
+    tot /= 64
+    print("Media: {:.2f}%".format(tot))
