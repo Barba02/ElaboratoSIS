@@ -1,0 +1,45 @@
+.model datapath
+.inputs RST ERRORE_SENSORE VALVOLA_ACIDO VALVOLA_BASICO SELECT_PH_REG pH7 pH6 pH5 pH4 pH3 pH2 pH1 pH0
+.outputs CHIUDI PH_FINALE7 PH_FINALE6 PH_FINALE5 PH_FINALE4 PH_FINALE3 PH_FINALE2 PH_FINALE1 PH_FINALE0 \
+NCLK7 NCLK6 NCLK5 NCLK4 NCLK3 NCLK2 NCLK1 NCLK0
+.subckt mux_2comb_8bit S=ccc I1_7=o7 I1_6=o6 I1_5=o5 I1_4=o4 I1_3=o3 I1_2=o2 I1_1=o1 I1_0=o0 \
+I0_7=f7 I0_6=f6 I0_5=f5 I0_4=f4 I0_3=f3 I0_2=f2 I0_1=f1 I0_0=f0 \
+O7=j7 O6=j6 O5=j5 O4=j4 O3=j3 O2=j2 O1=j1 O0=j0
+.subckt or A=SELECT_PH_REG B=ERRORE_SENSORE O=m
+.subckt mux_2comb_8bit S=m I1_7=pH7 I1_6=pH6 I1_5=pH5 I1_4=pH4 I1_3=pH3 I1_2=pH2 I1_1=pH1 I1_0=pH0 \
+I0_7=j7 I0_6=j6 I0_5=j5 I0_4=j4 I0_3=j3 I0_2=j2 I0_1=j1 I0_0=j0 \
+O7=a7 O6=a6 O5=a5 O4=a4 O3=a3 O2=a2 O1=a1 O0=a0
+.subckt zero_8bit O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
+.subckt mux_2comb_8bit S=RST I1_7=z7 I1_6=z6 I1_5=z5 I1_4=z4 I1_3=z3 I1_2=z2 I1_1=z1 I1_0=z0 \
+I0_7=a7 I0_6=a6 I0_5=a5 I0_4=a4 I0_3=a3 I0_2=a2 I0_1=a1 I0_0=a0 \
+O7=PH_FINALE7 O6=PH_FINALE6 O5=PH_FINALE5 O4=PH_FINALE4 O3=PH_FINALE3 O2=PH_FINALE2 O1=PH_FINALE1 O0=PH_FINALE0
+.subckt registro_8bit A7=PH_FINALE7 A6=PH_FINALE6 A5=PH_FINALE5 A4=PH_FINALE4 A3=PH_FINALE3 A2=PH_FINALE2 A1=PH_FINALE1 A0=PH_FINALE0 \
+O7=o7 O6=o6 O5=o5 O4=o4 O3=o3 O2=o2 O1=o1 O0=o0
+.subckt ph_quasi_neutro A7=o7 A6=o6 A5=o5 A4=o4 A3=o3 A2=o2 A1=o1 A0=o0 O=CHIUDI
+.subckt ph_neutro A7=o7 A6=o6 A5=o5 A4=o4 A3=o3 A2=o2 A1=o1 A0=o0 O=ccc
+.subckt acidificatore A7=o7 A6=o6 A5=o5 A4=o4 A3=o3 A2=o2 A1=o1 A0=o0 \
+O7=c7 O6=c6 O5=c5 O4=c4 O3=c3 O2=c2 O1=c1 O0=c0
+.subckt alcalinizzatore A7=o7 A6=o6 A5=o5 A4=o4 A3=o3 A2=o2 A1=o1 A0=o0 \
+O7=d7 O6=d6 O5=d5 O4=d4 O3=d3 O2=d2 O1=d1 O0=d0
+.subckt selettore_valvola A=VALVOLA_ACIDO B=VALVOLA_BASICO O=e
+.subckt registro A=e O=t
+.subckt mux_2comb_8bit S=t I1_7=c7 I1_6=c6 I1_5=c5 I1_4=c4 I1_3=c3 I1_2=c2 I1_1=c1 I1_0=c0 \
+I0_7=d7 I0_6=d6 I0_5=d5 I0_4=d4 I0_3=d3 I0_2=d2 I0_1=d1 I0_0=d0 \
+O7=f7 O6=f6 O5=f5 O4=f4 O3=f3 O2=f2 O1=f1 O0=f0
+.subckt or A=SELECT_PH_REG B=ccc O=k
+.subckt mux_2comb_8bit S=k I1_7=l7 I1_6=l6 I1_5=l5 I1_4=l4 I1_3=l3 I1_2=l2 I1_1=l1 I1_0=l0 \
+I0_7=i7 I0_6=i6 I0_5=i5 I0_4=i4 I0_3=i3 I0_2=i2 I0_1=i1 I0_0=i0 \
+O7=g7 O6=g6 O5=g5 O4=g4 O3=g3 O2=g2 O1=g1 O0=g0
+.subckt mux_2comb_8bit S=RST I1_7=z7 I1_6=z6 I1_5=z5 I1_4=z4 I1_3=z3 I1_2=z2 I1_1=z1 I1_0=z0 \
+I0_7=g7 I0_6=g6 I0_5=g5 I0_4=g4 I0_3=g3 I0_2=g2 I0_1=g1 I0_0=g0 \
+O7=h7 O6=h6 O5=h5 O4=h4 O3=h3 O2=h2 O1=h1 O0=h0
+.subckt registro_8bit A7=h7 A6=h6 A5=h5 A4=h4 A3=h3 A2=h2 A1=h1 A0=h0 \
+O7=l7 O6=l6 O5=l5 O4=l4 O3=l3 O2=l2 O1=l1 O0=l0
+.subckt mux_2comb_8bit S=RST I1_7=z7 I1_6=z6 I1_5=z5 I1_4=z4 I1_3=z3 I1_2=z2 I1_1=z1 I1_0=z0 \
+I0_7=g7 I0_6=g6 I0_5=g5 I0_4=g4 I0_3=g3 I0_2=g2 I0_1=g1 I0_0=g0 \
+O7=NCLK7 O6=NCLK6 O5=NCLK5 O4=NCLK4 O3=NCLK3 O2=NCLK2 O1=NCLK1 O0=NCLK0
+.subckt incrementatore_8bit A7=l7 A6=l6 A5=l5 A4=l4 A3=l3 A2=l2 A1=l1 A0=l0 \
+O7=i7 O6=i6 O5=i5 O4=i4 O3=i3 O2=i2 O1=i1 O0=i0
+.search libreria.blif
+.search libreria_8bit.blif
+.end

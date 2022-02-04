@@ -99,14 +99,14 @@
 .search libreria.blif
 .end
 
-.model valvola_basico
+.model alcalinizzatore
 .inputs A7 A6 A5 A4 A3 A2 A1 A0
 .outputs O7 O6 O5 O4 O3 O2 O1 O0
 .subckt zero_25 O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
 .subckt sommatore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=z7 B6=z6 B5=z5 B4=z4 B3=z3 B2=z2 B1=z1 B0=z0 O7=O7 O6=O6 O5=O5 O4=O4 O3=O3 O2=O2 O1=O1 O0=O0
 .end
 
-.model valvola_acido
+.model acidificatore
 .inputs A7 A6 A5 A4 A3 A2 A1 A0
 .outputs O7 O6 O5 O4 O3 O2 O1 O0
 .subckt zero_5_c2 O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
@@ -172,7 +172,7 @@
 .search libreria.blif
 .end
 
-.model ph_buono
+.model ph_neutro
 .inputs A7 A6 A5 A4 A3 A2 A1 A0
 .outputs O
 .subckt sei_9375 O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0

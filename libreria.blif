@@ -38,17 +38,19 @@
 1
 .end
 
-.model or
-.inputs A B
-.outputs O
-.names A B O
-00 0
-.end
-
 .model and
 .inputs A B
 .outputs O
 .names A B O
+11 1
+.end
+
+.model or
+.inputs A B
+.outputs O
+.names A B O
+01 1
+10 1
 11 1
 .end
 
@@ -60,9 +62,9 @@
 10 1
 .end
 
-.model ac_bs
-.inputs AC BS
+.model selettore_valvola
+.inputs A B
 .outputs O
-.names AC BS O
+.names A B O
 10 1
 .end

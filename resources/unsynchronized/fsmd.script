@@ -1,0 +1,3 @@
+source datapath.script
+source fsm.script
+read_blif fsmd.blif
