@@ -1,0 +1,166 @@
+.model datapath_ph
+.inputs SELETTORE_MUX VALVOLA_APERTA pH7 pH6 pH5 pH4 pH3 pH2 pH1 pH0
+.outputs CHIUDI PH_FINALE7 PH_FINALE6 PH_FINALE5 PH_FINALE4 PH_FINALE3 \
+PH_FINALE2 PH_FINALE1 PH_FINALE0 NCLK7 NCLK6 NCLK5 NCLK4 NCLK3 NCLK2 NCLK1 \
+NCLK0
+.latch    b7 c7 re NIL 0
+.latch    b6 c6 re NIL 0
+.latch    b5 c5 re NIL 0
+.latch    b4 c4 re NIL 0
+.latch    b3 c3 re NIL 0
+.latch    b2 c2 re NIL 0
+.latch    b1 c1 re NIL 0
+.latch    b0 c0 re NIL 0
+.latch    i7 j7 re NIL 0
+.latch    i6 j6 re NIL 0
+.latch    i5 j5 re NIL 0
+.latch    i4 j4 re NIL 0
+.latch    i3 j3 re NIL 0
+.latch    i2 j2 re NIL 0
+.latch    i1 j1 re NIL 0
+.latch    i0 j0 re NIL 0
+.names c7 c6 c5 c4 c2 c1 c0 [741] CHIUDI
+0111---- 1
+100-0000 1
+.names g c7 PH_FINALE7
+11 1
+.names g c6 PH_FINALE6
+11 1
+.names g c5 PH_FINALE5
+11 1
+.names g c4 PH_FINALE4
+11 1
+.names g c3 PH_FINALE3
+11 1
+.names g c2 PH_FINALE2
+11 1
+.names g c1 PH_FINALE1
+11 1
+.names g c0 PH_FINALE0
+11 1
+.names g j7 NCLK7
+11 1
+.names g j6 NCLK6
+11 1
+.names g j5 NCLK5
+11 1
+.names g j4 NCLK4
+11 1
+.names g j3 NCLK3
+11 1
+.names g j2 NCLK2
+11 1
+.names g j1 NCLK1
+11 1
+.names g j0 NCLK0
+11 1
+.names SELETTORE_MUX pH7 PH_FINALE7 c7 [728] [734] b7
+--1--- 1
+01---- 1
+---011 1
+1--1-0 1
+.names SELETTORE_MUX pH6 PH_FINALE6 c6 [728] [733] [734] [745] b6
+--1----- 1
+01------ 1
+---01-1- 1
+----100- 1
+1--1--01 1
+.names SELETTORE_MUX pH5 PH_FINALE5 c5 [728] [733] [743] [744] [745] [748] b5
+--1------- 1
+01-------- 1
+----1---0- 1
+1--1-1-1-- 1
+----110--0 1
+.names SELETTORE_MUX VALVOLA_APERTA pH4 PH_FINALE4 c4 c3 [728] [743] [744] \
+[748] b4
+---1------ 1
+0-1------- 1
+------1-0- 1
+1------1-0 1
+10--10---- 1
+----0110-- 1
+.names SELETTORE_MUX pH3 PH_FINALE3 c3 [728] [746] b3
+--1--- 1
+01---- 1
+---011 1
+1--1-0 1
+.names SELETTORE_MUX VALVOLA_APERTA pH2 PH_FINALE2 c2 [728] [746] b2
+---1--- 1
+0-1---- 1
+-----10 1
+11--1-- 1
+.names SELETTORE_MUX pH1 c1 b1
+01- 1
+1-1 1
+.names SELETTORE_MUX pH0 c0 b0
+01- 1
+1-1 1
+.names CHIUDI SELETTORE_MUX g
+11 1
+.names SELETTORE_MUX j7 j6 i6 i7
+-1-1 1
+110- 1
+1010 1
+.names SELETTORE_MUX j6 j5 i5 i6
+-1-1 1
+110- 1
+1010 1
+.names SELETTORE_MUX NCLK5 j5 [728] [747] i5
+-1--- 1
+1-1-1 1
+--010 1
+.names SELETTORE_MUX j4 j3 i3 [742] [747] i4
+---1-0 1
+11--1- 1
+1010-- 1
+.names SELETTORE_MUX NCLK3 j3 [626] [728] i3
+-1--- 1
+1-10- 1
+--011 1
+.names SELETTORE_MUX NCLK0 j2 j1 i0 [626] [728] i2
+-1---1- 1
+1-1--0- 1
+---1001 1
+.names SELETTORE_MUX j1 j0 i0 i1
+-1-1 1
+110- 1
+1010 1
+.names NCLK0 j0 [728] i0
+1-- 1
+-01 1
+.names j2 j1 j0 [626]
+111 1
+.names SELETTORE_MUX g [728]
+10 1
+.names c5 [743] [748] [733]
+0-- 1
+-1- 1
+--1 1
+.names c6 [733] [745] [734]
+10- 1
+0-0 1
+.names c4 c3 [741]
+1- 1
+-1 1
+.names j3 [626] [742]
+0- 1
+-0 1
+.names VALVOLA_APERTA c2 [743]
+1- 1
+-0 1
+.names VALVOLA_APERTA [741] [744]
+0- 1
+-1 1
+.names c5 [744] [745]
+1- 1
+-1 1
+.names VALVOLA_APERTA c2 [746]
+1- 1
+-1 1
+.names j4 [742] [747]
+0- 1
+-1 1
+.names c4 c3 [748]
+0- 1
+-0 1
+.end
