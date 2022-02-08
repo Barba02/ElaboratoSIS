@@ -1,5 +1,4 @@
 - da errore bisogna prima resettare per tornare a ph_iniziale
 - con valvola_basico e valcola_acido entrambi a 0 il datapath cosa manda in output
 - uno_8bit sarebbe 0.0625
-- al primo ciclo c'è sempre 0..0 perché arriva dal registro con il reset
-- or per evitare che conteggi anche se c'è errore
+- and sull'ultimo mux del ph per evitare che chiudi faccia passare il avlore nel registro quando c'è errore

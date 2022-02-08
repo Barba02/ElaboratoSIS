@@ -1,6 +1,0 @@
-read_blif fsm.blif
-state_minimize stamina
-state_assign jedi
-stg_to_network
-source script.rugged
-write_blif min_fsm.blif
