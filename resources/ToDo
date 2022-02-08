@@ -1,10 +1,10 @@
 BARBA
-- componenti interni .jpg
+- datapath + componenti
 - schema interfacce
 
 BRIGHE
 - relazione
-- test vario (rifare script con rugged)
+- test vario
 
 
 - test su vm
