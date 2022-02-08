@@ -1,5 +1,0 @@
-read_blif datapath.blif
-source script.rugged
-source script.rugged
-source script.rugged
-write_blif min_datapath.blif

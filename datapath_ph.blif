@@ -11,7 +11,8 @@ O7=b7 O6=b6 O5=b5 O4=b4 O3=b3 O2=b2 O1=b1 O0=b0
 O7=c7 O6=c6 O5=c5 O4=c4 O3=c3 O2=c2 O1=c1 O0=c0
 .subckt ph_neutro A7=c7 A6=c6 A5=c5 A4=c4 A3=c3 A2=c2 A1=c1 A0=c0 O=CHIUDI
 .subckt zero_8bit O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
-.subckt mux_2comb_8bit S=CHIUDI I1_7=c7 I1_6=c6 I1_5=c5 I1_4=c4 I1_3=c3 I1_2=c2 I1_1=c1 I1_0=c0 \
+.subckt and A=CHIUDI B=SELETTORE_MUX O=g
+.subckt mux_2comb_8bit S=g I1_7=c7 I1_6=c6 I1_5=c5 I1_4=c4 I1_3=c3 I1_2=c2 I1_1=c1 I1_0=c0 \
 I0_7=z7 I0_6=z6 I0_5=z5 I0_4=z4 I0_3=z3 I0_2=z2 I0_1=z1 I0_0=z0 \
 O7=PH_FINALE7 O6=PH_FINALE6 O5=PH_FINALE5 O4=PH_FINALE4 O3=PH_FINALE3 O2=PH_FINALE2 O1=PH_FINALE1 O0=PH_FINALE0
 .subckt acidificatore A7=c7 A6=c6 A5=c5 A4=c4 A3=c3 A2=c2 A1=c1 A0=c0 \
