@@ -1,5 +1,5 @@
-#!/usr/lib/python3
-
+import sys
+import time
 import random
 import subprocess as sp
 
@@ -62,123 +62,122 @@ def file_print(f, p, n):
 
 # funzione che rappresenta lo stato di erogazione della soluzione acida e le sue transizioni
 def eroga_acido():
-    global ph, registro_ph, registro_nclk, rst, start, state
+    global ph, next_state_ph, next_state_nclk, rst, state
     # se rst è alzato si torna allo stato iniziale con tutti gli output a 0
     if rst == "1":
         state = "reset"
-        registro_ph = ph
+        next_state_ph = ph
         file_print("0 0 0 0", 0, 0)
-    # altrimenti si acidifica la soluzione di partenza di 0.5 e si aumenta il contatore
+    # altrimenti si acidifica la soluzione di 0.5 e si aumenta il contatore
     else:
-        registro_ph -= 0.5
-        registro_nclk += 1
+        next_state_ph -= 0.5
+        next_state_nclk += 1
         # se il ph è neutro si passa allo stato di fine
-        if registro_ph <= 8:
+        if next_state_ph <= 8:
             state = "fine"
-            file_print("1 0 0 0", registro_ph, registro_nclk)
-        else:
-            file_print("0 0 1 0", registro_ph, registro_nclk)
+        # altrimenti si prosegue l'erogazione
+        file_print("0 0 1 0", 0, 0)
 
 
 # funzione che rappresenta lo stato di erogazione della soluzione basica e le sue transizioni
 def eroga_base():
-    global ph, registro_ph, registro_nclk, rst, start, state
+    global ph, next_state_ph, next_state_nclk, rst, state
     # se rst è alzato si torna allo stato iniziale con tutti gli output a 0
     if rst == "1":
         state = "reset"
-        registro_ph = ph
+        next_state_ph = ph
         file_print("0 0 0 0", 0, 0)
-    # altrimenti si alcalinizza la soluzione di partenza di 0.25 e si aumenta il contatore
+    # altrimenti si alcalinizza la soluzione di 0.25 e si aumenta il contatore
     else:
-        registro_ph += 0.25
-        registro_nclk += 1
+        next_state_ph += 0.25
+        next_state_nclk += 1
         # se il ph è neutro si passa allo stato di fine
-        if registro_ph >= 7:
+        if next_state_ph >= 7:
             state = "fine"
-            file_print("1 0 0 0", registro_ph, registro_nclk)
-        else:
-            file_print("0 0 0 1", registro_ph, registro_nclk)
+        # altrimenti si prosegue l'erogazione
+        file_print("0 0 0 1", 0, 0)
 
 
 # funzione che rappresenta lo stato finale e le sue transizioni 
 def fine():
-    global ph, registro_ph, registro_nclk, rst, start, state
-    # se rst è alzato si torna allo stato iniziale con tutti gli output a 0
+    global ph, next_state_ph, next_state_nclk, rst, state
+    # se rst è alzato si torna allo stato iniziale
     if rst == "1":
         state = "reset"
-        registro_ph = ph
+        next_state_ph = ph
         file_print("0 0 0 0", 0, 0)
-    # altrimenti in uscita si mantiene alto il bit di fine e si stampano ph e nclk finali 
+    # altrimenti in uscita si mantiene alto il bit di fine e si stampano ph e nclk
     else:
-        file_print("1 0 0 0", registro_ph, registro_nclk)
+        file_print("1 0 0 0", next_state_ph, next_state_nclk)
 
 
 # funzione che rappresenta lo stato di input errato e le sue transizioni 
 def errore():
-    global ph, registro_ph, registro_nclk, rst, start, state
-    # se rst è alzato si torna allo stato iniziale con tutti gli output a 0
+    global ph, next_state_ph, rst, state
+    # se rst è alzato si torna allo stato iniziale
     if rst == "1":
         state = "reset"
         file_print("0 0 0 0", 0, 0)
-    # altrimenti in uscita si mantiene alto il bit di errore e si stampano ph e nclk
+    # altrimenti in uscita si mantiene alto il bit di errore
     else:
-        file_print("0 1 0 0", ph, 0)
-    registro_ph = ph
+        file_print("0 1 0 0", 0, 0)
+    next_state_ph = ph
 
 
 # funzione che rappresenta lo stato iniziale e le sue transizioni
 def reset():
-    global ph, registro_ph, registro_nclk, rst, start, state
+    global ph, next_state_ph, next_state_nclk, rst, start, state
     # si azzera il conteggio dei cicli di clock
-    registro_nclk = 0
-    # se rst è alzato si torna allo stato iniziale con tutti gli output a 0
+    next_state_nclk = 0
+    # se rst è alzato si resta nello stato iniziale
     if rst == "1":
         file_print("0 0 0 0", 0, 0)
     # nel caso rst sia abbassato
     else:
-        # se start è basso rimango nello stato e stampo il ph dato in input e nclk
+        # se start è basso rimango nello stato iniziale
         if start == "0":
-            file_print("0 0 0 0", ph, 0)
+            file_print("0 0 0 0", 0, 0)
         # se start è alto inizia il calcolo
         else:
-            # se il ph in input è maggiore di 14 si va nello stato di errore con il relativo bit alzato e stampo il
-            # ph dato in input e nclk
+            # se il ph in input è maggiore di 14 si va nello stato di errore con il relativo bit alzato
             if ph > 14:
                 state = "errore"
-                file_print("0 1 0 0", ph, 0)
+                file_print("0 1 0 0", 0, 0)
             # se il ph è valido
             else:
-                # nel caso sia già neutro passo allo stato di fine alzando corrispettivo bit e mettendo in output il
-                # ph dato con nclk
+                # nel caso sia già neutro passo allo stato di fine
                 if 7 <= ph <= 8:
                     state = "fine"
-                    file_print("1 0 0 0", ph, registro_nclk)
+                    file_print("0 0 0 0", 0, 0)
                 # altrimenti
                 else:
-                    # se la soluzione è acida, inizio ad erogare soluzione basica e alzo il bit della corrispondente
-                    # valvola, stampando ph e nclk
+                    # se la soluzione è acida passo allo stato di eroga_base
                     if ph < 7:
                         state = "eroga_base"
-                        file_print("0 0 0 1", ph, registro_nclk)
-                    # se la soluzione è basica, inizio ad erogare soluzione acida e alzo il bit della corrispondente
-                    # valvola, stampando ph e nclk
+                        file_print("0 0 0 0", 0, 0)
+                    # se la soluzione è acida passo allo stato di eroga_acido
                     else:
                         state = "eroga_acido"
-                        file_print("0 0 1 0", ph, registro_nclk)
-    registro_ph = ph
+                        file_print("0 0 0 0", 0, 0)
+    # faccio entrare il ph nel registro
+    next_state_ph = ph
 
 
 # funzione che genera una stringa di 10 bit casuali per l'input
 def genera_input():
+    global state
     tmp = ""
     for _ in range(10):
         tmp += str(random.randrange(2))
+    # se non si è nello stato di reset, c'è 1/3 di possibilità che reset venga messo a 1
+    if state != "reset":
+        tmp = str(random.randrange(3) % 2) + tmp[1:]
     return tmp
 
 
-# funzione che svolge la routine stampare gli input sul file e richiamare le funzioni dello stato attuale
+# funzione che stampa gli input sul file e richiama le funzioni dello stato attuale
 def loop():
-    global ph, registro_ph, registro_nclk, rst, start, state, user_input, eo, inputs
+    global ph, rst, start, state, user_input, inputs
     inputs.write("sim " + spaziatore(user_input) + "\n")
     rst = user_input[0]
     start = user_input[1]
@@ -188,24 +187,42 @@ def loop():
 
 
 if __name__ == "__main__":
+    # inizializzazione totale dei risultati
     tot = 0
-    for _ in range(64):
+    # input e controlli test
+    test = int(sys.argv[1])
+    if test < 1:
+        test = 1
+        print("Too few tests")
+    # input e controlli input per test
+    input_x_test = int(sys.argv[2])
+    if input_x_test > 3410:
+        input_x_test = 3410
+        print("Too much inputs")
+    elif input_x_test < 1:
+        input_x_test = 1
+        print("Too few inputs")
+    # inizio dei testi
+    print(f"Executing {test} tests over {input_x_test} inputs\n")
+    duration = time.time()
+    for i in range(test):
         # inizializzazione del datapath
         ph = 0
-        registro_ph = 0
-        registro_nclk = 0
+        next_state_ph = 0
+        next_state_nclk = 0
         # inizializzazione della fsm
         rst = 0
         start = 0
         state = "reset"
+        # apertura dei file con gli input da dare a sis e gli output aspettati
         with open("expected_outputs.txt", "w") as eo, open("inputs.txt", "w") as inputs:
             inputs.write("read_blif \"../min_fsmd.blif\"\n")
-            # inizio della routine
+            # inizio del ciclo
             user_input = genera_input()
-            for _ in range(1024):
+            for _ in range(input_x_test):
                 loop()
             loop()
-            # chiusura routine e chiusura del file con i comandi per sis
+            # chiusura ciclo
             inputs.write("quit\n")
         # lettura degli input da dare a sis
         with open("inputs.txt", "r") as inputs:
@@ -231,14 +248,17 @@ if __name__ == "__main__":
             e = expected.read().split("\n")
         # conteggio dei test superati
         passed = 0
-        for i in range(len(a)-1):
-            if a[i] == e[i]:
+        for j in range(input_x_test):
+            if a[j] == e[j]:
                 passed += 1
             else:
-                print("row", i+1)
+                print(f"(Test {i+1}) ERROR in line {j+1}")
         # stampa percentuale di test superati
-        passed = passed * 100 / (len(a) - 1)
+        passed = passed * 100 / input_x_test
         tot += passed
+        print(f"Test {i+1}: ", end="")
         print("{:.2f}%".format(passed))
-    tot /= 64
-    print("Media: {:.2f}%".format(tot))
+    tot /= test
+    print("\nAverage: {:.2f}%".format(tot))
+    duration = time.time() - duration
+    print("Duration: {:.2f} seconds".format(duration))
