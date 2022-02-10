@@ -142,7 +142,7 @@ def reset():
             # se il ph in input è maggiore di 14 si va nello stato di errore con il relativo bit alzato
             if ph > 14:
                 state = "errore"
-                file_print("0 1 0 0", 0, 0)
+                file_print("0 0 0 0", 0, 0)
             # se il ph è valido
             else:
                 # nel caso sia già neutro passo allo stato di fine
