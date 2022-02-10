@@ -239,18 +239,3 @@ resub
 fx
 source script.rugged
 source script.rugged
-collapse
-fx
-source script.rugged
-sweep
-collapse
-source script.rugged
-fx
-sweep
-eliminate -1
-source script.rugged
-full_simplify
-collapse
-sweep
-eliminate -1
-fx

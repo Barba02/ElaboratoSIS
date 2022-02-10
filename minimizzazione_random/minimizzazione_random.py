@@ -5,8 +5,8 @@ from os.path import exists
 
 
 # statistiche riferimento min_datapath.blif
-min_nodes = 46
-min_lits = 211
+min_nodes = 41
+min_lits = 207
 # lista dei comandi di sis per la sintesi
 commands = ["source script.rugged", "eliminate -1", "sweep", "fx", "resub", "simplify", "full_simplify", "collapse",
             "reduce_depth", "espresso"]
@@ -40,7 +40,9 @@ with open(str(pk) + "_stats.txt", "w") as stats:
         stats.write(str(nodes) + " " + str(lits))
         # evidenziazione di statitistiche valide
         if nodes <= min_nodes:
-            stats.write("\t\tless nodes")
+            min_nodes = nodes
+            stats.write("\t\t\tless nodes")
         if lits <= min_lits:
-            stats.write("\tless lits")
+            min_lits = lits
+            stats.write("   less lits")
         stats.write("\n")
