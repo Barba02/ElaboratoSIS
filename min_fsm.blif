@@ -2,9 +2,9 @@
 .inputs RST START pH7 pH6 pH5 pH4 pH3 pH2 pH1 pH0 CHIUDI
 .outputs FINE_OPERAZIONE ERRORE_SENSORE VALVOLA_ACIDO VALVOLA_BASICO \
 SELETTORE_MUX VALVOLA_APERTA
-.latch    [407] LatchOut_v11   0
-.latch    [408] LatchOut_v12   1
-.latch    [409] LatchOut_v13   1
+.latch    [564] LatchOut_v11   0
+.latch    [565] LatchOut_v12   1
+.latch    [566] LatchOut_v13   1
 .start_kiss
 .i 11
 .o 6
@@ -48,17 +48,17 @@ SELETTORE_MUX VALVOLA_APERTA
 .code FINE 010
 .code EROGA_ACIDO 000
 .code ERRORE 001
-.names RST START LatchOut_v12 VALVOLA_BASICO VALVOLA_APERTA [433] [407]
+.names RST START LatchOut_v12 VALVOLA_BASICO VALVOLA_APERTA [583] [564]
 ---1-- 1
 011-01 1
-.names RST START pH7 pH6 pH5 pH4 LatchOut_v12 [409] FINE_OPERAZIONE [433] \
-[437] [408]
+.names RST START pH7 pH6 pH5 pH4 LatchOut_v12 [566] FINE_OPERAZIONE [583] \
+[587] [565]
 1---------- 1
 --------1-- 1
 -0----1---- 1
 ------10-0- 1
 --10001---0 1
-.names RST START LatchOut_v13 ERRORE_SENSORE [432] [433] [434] [437] [409]
+.names RST START LatchOut_v13 ERRORE_SENSORE [582] [583] [584] [587] [566]
 1------- 1
 ---1---- 1
 -01----- 1
@@ -75,18 +75,18 @@ SELETTORE_MUX VALVOLA_APERTA
 001 1
 .names RST LatchOut_v13 SELETTORE_MUX
 00 1
-.names LatchOut_v11 LatchOut_v13 [434] VALVOLA_APERTA
+.names LatchOut_v11 LatchOut_v13 [584] VALVOLA_APERTA
 --1 1
 00- 1
-.names pH6 pH5 [432]
+.names pH6 pH5 [582]
 0- 1
 -0 1
-.names pH4 [432] [433]
+.names pH4 [582] [583]
 0- 1
 -1 1
-.names pH7 LatchOut_v13 [434]
+.names pH7 LatchOut_v13 [584]
 11 1
-.names pH3 pH2 pH1 pH0 [437]
+.names pH3 pH2 pH1 pH0 [587]
 1--- 1
 -1-- 1
 --1- 1
@@ -94,15 +94,15 @@ SELETTORE_MUX VALVOLA_APERTA
 .exdc 
 .inputs RST START pH7 pH6 pH5 pH4 pH3 pH2 pH1 pH0 CHIUDI LatchOut_v11 \
 LatchOut_v12 LatchOut_v13
-.outputs [407] [408] [409] FINE_OPERAZIONE ERRORE_SENSORE VALVOLA_ACIDO \
+.outputs [564] [565] [566] FINE_OPERAZIONE ERRORE_SENSORE VALVOLA_ACIDO \
 VALVOLA_BASICO SELETTORE_MUX VALVOLA_APERTA
-.names LatchOut_v11 LatchOut_v12 LatchOut_v13 [407]
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 [564]
 11- 1
 1-1 1
-.names LatchOut_v11 LatchOut_v12 LatchOut_v13 [408]
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 [565]
 11- 1
 1-1 1
-.names LatchOut_v11 LatchOut_v12 LatchOut_v13 [409]
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 [566]
 11- 1
 1-1 1
 .names LatchOut_v11 LatchOut_v12 LatchOut_v13 FINE_OPERAZIONE
