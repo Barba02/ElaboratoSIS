@@ -1,0 +1,1000 @@
+resub
+eliminate -1
+fx
+full_simplify
+resub
+simplify
+full_simplify
+full_simplify
+collapse
+espresso
+full_simplify
+resub
+full_simplify
+espresso
+simplify
+eliminate -1
+simplify
+collapse
+resub
+eliminate -1
+sweep
+sweep
+collapse
+resub
+source script.rugged
+espresso
+eliminate -1
+espresso
+collapse
+espresso
+sweep
+simplify
+resub
+espresso
+simplify
+resub
+fx
+resub
+resub
+sweep
+eliminate -1
+reduce_depth
+sweep
+full_simplify
+fx
+fx
+sweep
+simplify
+simplify
+resub
+sweep
+full_simplify
+full_simplify
+fx
+simplify
+espresso
+reduce_depth
+collapse
+collapse
+espresso
+simplify
+fx
+fx
+simplify
+reduce_depth
+simplify
+collapse
+eliminate -1
+collapse
+fx
+resub
+eliminate -1
+eliminate -1
+source script.rugged
+simplify
+fx
+reduce_depth
+reduce_depth
+source script.rugged
+sweep
+fx
+resub
+eliminate -1
+resub
+full_simplify
+reduce_depth
+reduce_depth
+resub
+simplify
+full_simplify
+resub
+reduce_depth
+full_simplify
+simplify
+simplify
+simplify
+reduce_depth
+source script.rugged
+espresso
+eliminate -1
+sweep
+simplify
+full_simplify
+eliminate -1
+eliminate -1
+full_simplify
+reduce_depth
+reduce_depth
+source script.rugged
+reduce_depth
+resub
+simplify
+eliminate -1
+source script.rugged
+simplify
+full_simplify
+sweep
+resub
+sweep
+eliminate -1
+sweep
+sweep
+fx
+reduce_depth
+resub
+full_simplify
+reduce_depth
+fx
+sweep
+reduce_depth
+resub
+reduce_depth
+fx
+reduce_depth
+collapse
+source script.rugged
+source script.rugged
+eliminate -1
+sweep
+source script.rugged
+resub
+resub
+reduce_depth
+fx
+full_simplify
+fx
+reduce_depth
+resub
+full_simplify
+reduce_depth
+collapse
+reduce_depth
+reduce_depth
+resub
+reduce_depth
+espresso
+fx
+fx
+collapse
+eliminate -1
+collapse
+simplify
+reduce_depth
+resub
+full_simplify
+eliminate -1
+sweep
+collapse
+reduce_depth
+resub
+eliminate -1
+reduce_depth
+eliminate -1
+fx
+fx
+source script.rugged
+source script.rugged
+espresso
+simplify
+full_simplify
+source script.rugged
+espresso
+reduce_depth
+simplify
+reduce_depth
+eliminate -1
+resub
+espresso
+fx
+reduce_depth
+reduce_depth
+sweep
+source script.rugged
+resub
+fx
+resub
+eliminate -1
+sweep
+espresso
+sweep
+collapse
+eliminate -1
+eliminate -1
+collapse
+fx
+fx
+full_simplify
+espresso
+full_simplify
+reduce_depth
+sweep
+source script.rugged
+sweep
+reduce_depth
+reduce_depth
+reduce_depth
+resub
+collapse
+espresso
+collapse
+source script.rugged
+espresso
+resub
+source script.rugged
+resub
+eliminate -1
+reduce_depth
+source script.rugged
+simplify
+simplify
+espresso
+resub
+resub
+reduce_depth
+eliminate -1
+collapse
+resub
+simplify
+fx
+reduce_depth
+source script.rugged
+sweep
+full_simplify
+sweep
+eliminate -1
+sweep
+full_simplify
+collapse
+sweep
+eliminate -1
+simplify
+collapse
+simplify
+resub
+simplify
+full_simplify
+simplify
+full_simplify
+sweep
+fx
+eliminate -1
+simplify
+reduce_depth
+resub
+full_simplify
+resub
+source script.rugged
+espresso
+resub
+sweep
+reduce_depth
+espresso
+source script.rugged
+espresso
+eliminate -1
+sweep
+full_simplify
+eliminate -1
+full_simplify
+resub
+espresso
+reduce_depth
+eliminate -1
+full_simplify
+sweep
+simplify
+resub
+resub
+espresso
+eliminate -1
+fx
+full_simplify
+fx
+source script.rugged
+reduce_depth
+simplify
+fx
+source script.rugged
+collapse
+source script.rugged
+full_simplify
+fx
+collapse
+fx
+fx
+reduce_depth
+fx
+resub
+reduce_depth
+espresso
+simplify
+fx
+simplify
+reduce_depth
+collapse
+eliminate -1
+eliminate -1
+resub
+source script.rugged
+resub
+full_simplify
+fx
+sweep
+source script.rugged
+sweep
+espresso
+fx
+espresso
+reduce_depth
+simplify
+espresso
+espresso
+sweep
+source script.rugged
+source script.rugged
+source script.rugged
+simplify
+collapse
+espresso
+resub
+eliminate -1
+espresso
+reduce_depth
+source script.rugged
+source script.rugged
+source script.rugged
+resub
+eliminate -1
+simplify
+resub
+simplify
+full_simplify
+source script.rugged
+espresso
+espresso
+collapse
+collapse
+full_simplify
+eliminate -1
+simplify
+source script.rugged
+full_simplify
+fx
+source script.rugged
+simplify
+reduce_depth
+collapse
+sweep
+simplify
+reduce_depth
+simplify
+reduce_depth
+collapse
+full_simplify
+source script.rugged
+full_simplify
+espresso
+resub
+full_simplify
+collapse
+source script.rugged
+source script.rugged
+full_simplify
+eliminate -1
+fx
+collapse
+resub
+full_simplify
+full_simplify
+espresso
+resub
+sweep
+sweep
+full_simplify
+eliminate -1
+collapse
+full_simplify
+simplify
+resub
+fx
+reduce_depth
+full_simplify
+espresso
+full_simplify
+collapse
+full_simplify
+collapse
+simplify
+source script.rugged
+source script.rugged
+simplify
+source script.rugged
+reduce_depth
+collapse
+full_simplify
+sweep
+reduce_depth
+eliminate -1
+espresso
+source script.rugged
+simplify
+sweep
+collapse
+full_simplify
+full_simplify
+source script.rugged
+simplify
+collapse
+reduce_depth
+full_simplify
+espresso
+collapse
+reduce_depth
+source script.rugged
+collapse
+simplify
+source script.rugged
+sweep
+source script.rugged
+collapse
+espresso
+fx
+espresso
+sweep
+reduce_depth
+fx
+simplify
+source script.rugged
+collapse
+eliminate -1
+simplify
+reduce_depth
+resub
+espresso
+fx
+eliminate -1
+espresso
+espresso
+sweep
+resub
+fx
+eliminate -1
+full_simplify
+reduce_depth
+sweep
+reduce_depth
+full_simplify
+simplify
+resub
+source script.rugged
+full_simplify
+simplify
+simplify
+resub
+espresso
+fx
+resub
+reduce_depth
+eliminate -1
+collapse
+eliminate -1
+reduce_depth
+collapse
+full_simplify
+reduce_depth
+fx
+source script.rugged
+full_simplify
+collapse
+full_simplify
+sweep
+simplify
+fx
+fx
+simplify
+sweep
+sweep
+fx
+collapse
+espresso
+source script.rugged
+eliminate -1
+fx
+fx
+reduce_depth
+fx
+collapse
+resub
+full_simplify
+resub
+sweep
+simplify
+simplify
+espresso
+eliminate -1
+source script.rugged
+source script.rugged
+sweep
+fx
+collapse
+reduce_depth
+source script.rugged
+full_simplify
+collapse
+resub
+resub
+fx
+full_simplify
+full_simplify
+source script.rugged
+fx
+espresso
+reduce_depth
+simplify
+full_simplify
+fx
+resub
+collapse
+resub
+espresso
+sweep
+collapse
+espresso
+fx
+collapse
+sweep
+fx
+full_simplify
+fx
+espresso
+fx
+collapse
+reduce_depth
+sweep
+reduce_depth
+collapse
+eliminate -1
+eliminate -1
+sweep
+source script.rugged
+collapse
+fx
+source script.rugged
+fx
+eliminate -1
+eliminate -1
+fx
+reduce_depth
+fx
+simplify
+full_simplify
+espresso
+resub
+reduce_depth
+sweep
+fx
+full_simplify
+resub
+reduce_depth
+resub
+sweep
+simplify
+espresso
+espresso
+resub
+reduce_depth
+reduce_depth
+source script.rugged
+full_simplify
+resub
+sweep
+eliminate -1
+simplify
+full_simplify
+resub
+simplify
+resub
+source script.rugged
+full_simplify
+collapse
+source script.rugged
+eliminate -1
+collapse
+fx
+full_simplify
+full_simplify
+eliminate -1
+source script.rugged
+collapse
+resub
+sweep
+source script.rugged
+espresso
+fx
+collapse
+resub
+source script.rugged
+simplify
+simplify
+full_simplify
+eliminate -1
+collapse
+fx
+simplify
+simplify
+resub
+reduce_depth
+espresso
+source script.rugged
+source script.rugged
+fx
+fx
+eliminate -1
+eliminate -1
+resub
+reduce_depth
+fx
+eliminate -1
+eliminate -1
+collapse
+reduce_depth
+eliminate -1
+fx
+resub
+espresso
+sweep
+reduce_depth
+sweep
+sweep
+simplify
+eliminate -1
+fx
+full_simplify
+eliminate -1
+source script.rugged
+fx
+collapse
+fx
+source script.rugged
+sweep
+sweep
+full_simplify
+sweep
+full_simplify
+espresso
+simplify
+source script.rugged
+fx
+eliminate -1
+full_simplify
+simplify
+source script.rugged
+fx
+full_simplify
+reduce_depth
+espresso
+source script.rugged
+reduce_depth
+source script.rugged
+sweep
+eliminate -1
+full_simplify
+sweep
+reduce_depth
+reduce_depth
+collapse
+source script.rugged
+simplify
+resub
+sweep
+source script.rugged
+reduce_depth
+eliminate -1
+sweep
+resub
+espresso
+full_simplify
+resub
+reduce_depth
+collapse
+reduce_depth
+reduce_depth
+espresso
+sweep
+collapse
+sweep
+source script.rugged
+resub
+simplify
+source script.rugged
+sweep
+full_simplify
+sweep
+eliminate -1
+full_simplify
+sweep
+collapse
+full_simplify
+eliminate -1
+espresso
+resub
+sweep
+resub
+source script.rugged
+simplify
+resub
+reduce_depth
+source script.rugged
+fx
+fx
+resub
+simplify
+full_simplify
+reduce_depth
+espresso
+eliminate -1
+reduce_depth
+espresso
+simplify
+simplify
+source script.rugged
+reduce_depth
+collapse
+reduce_depth
+eliminate -1
+resub
+espresso
+espresso
+full_simplify
+fx
+collapse
+sweep
+collapse
+source script.rugged
+sweep
+reduce_depth
+collapse
+espresso
+fx
+espresso
+collapse
+collapse
+sweep
+simplify
+eliminate -1
+full_simplify
+reduce_depth
+eliminate -1
+sweep
+eliminate -1
+sweep
+source script.rugged
+reduce_depth
+sweep
+espresso
+source script.rugged
+sweep
+reduce_depth
+full_simplify
+source script.rugged
+reduce_depth
+full_simplify
+eliminate -1
+full_simplify
+resub
+full_simplify
+fx
+sweep
+eliminate -1
+simplify
+reduce_depth
+sweep
+simplify
+collapse
+simplify
+reduce_depth
+simplify
+collapse
+reduce_depth
+collapse
+source script.rugged
+sweep
+full_simplify
+full_simplify
+espresso
+espresso
+source script.rugged
+eliminate -1
+sweep
+espresso
+espresso
+sweep
+fx
+resub
+sweep
+eliminate -1
+full_simplify
+collapse
+espresso
+sweep
+full_simplify
+sweep
+espresso
+eliminate -1
+reduce_depth
+source script.rugged
+sweep
+reduce_depth
+collapse
+espresso
+resub
+collapse
+eliminate -1
+simplify
+espresso
+full_simplify
+resub
+simplify
+espresso
+simplify
+full_simplify
+full_simplify
+simplify
+source script.rugged
+fx
+full_simplify
+source script.rugged
+resub
+source script.rugged
+source script.rugged
+fx
+espresso
+espresso
+fx
+fx
+fx
+resub
+espresso
+sweep
+resub
+reduce_depth
+full_simplify
+reduce_depth
+full_simplify
+espresso
+espresso
+source script.rugged
+fx
+simplify
+fx
+resub
+full_simplify
+collapse
+resub
+espresso
+eliminate -1
+eliminate -1
+eliminate -1
+collapse
+simplify
+sweep
+reduce_depth
+eliminate -1
+eliminate -1
+espresso
+espresso
+reduce_depth
+reduce_depth
+fx
+reduce_depth
+source script.rugged
+sweep
+source script.rugged
+reduce_depth
+reduce_depth
+source script.rugged
+source script.rugged
+reduce_depth
+espresso
+collapse
+full_simplify
+eliminate -1
+espresso
+collapse
+source script.rugged
+full_simplify
+source script.rugged
+full_simplify
+sweep
+espresso
+resub
+collapse
+sweep
+resub
+eliminate -1
+full_simplify
+espresso
+full_simplify
+collapse
+simplify
+collapse
+collapse
+full_simplify
+resub
+full_simplify
+sweep
+eliminate -1
+source script.rugged
+collapse
+reduce_depth
+resub
+full_simplify
+reduce_depth
+resub
+resub
+eliminate -1
+fx
+fx
+eliminate -1
+sweep
+simplify
+espresso
+full_simplify
+reduce_depth
+sweep
+collapse
+source script.rugged
+sweep
+full_simplify
+eliminate -1
+source script.rugged
+fx
+source script.rugged
+eliminate -1
+source script.rugged
+source script.rugged
+sweep
+resub
+simplify
+reduce_depth
+fx
+sweep
+full_simplify
+resub
+espresso
+sweep
+sweep
+full_simplify
+full_simplify
+sweep
+full_simplify
+collapse
+full_simplify
+source script.rugged
+espresso
+sweep
+espresso
+sweep
+espresso
+eliminate -1
+simplify
+eliminate -1
+fx
+espresso
+simplify
+fx
+sweep
+collapse
+sweep
+sweep
+reduce_depth
+full_simplify
+source script.rugged
+fx
+eliminate -1
+resub
+sweep
+source script.rugged
+espresso
+resub
