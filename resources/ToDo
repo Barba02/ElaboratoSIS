@@ -1,6 +1,5 @@
 BARBA
-- schema datapath + componenti
-- schema interfacce
+- minimizzazione random
 
 BRIGHE
 - relazione
@@ -9,4 +8,3 @@ BRIGHE
 
 - test su vm
 - chk organizzazione directory
-- minimizzazione random (spezza datapath/tutto in un colpo)
