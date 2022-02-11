@@ -1,6 +1,0 @@
-sweep
-fx
-eliminate -1
-fx
-full_simplify
-source script.rugged
