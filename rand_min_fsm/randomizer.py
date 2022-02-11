@@ -5,8 +5,8 @@ from os.path import exists
 
 
 # statistiche riferimento min_datapath.blif
-min_nodes = 11
-min_lits = 54
+min_nodes = 9
+min_lits = 52
 # lista dei comandi di sis per la sintesi
 commands = ["source script.rugged", "eliminate -1", "sweep", "fx", "resub", "simplify", "full_simplify", "collapse",
             "reduce_depth", "espresso"]
@@ -19,20 +19,17 @@ else:
 with open("auto_increment.txt", "w") as ai:
     ai.write(str(pk+1))
 # inizio sottoprocesso
+assign_algo = str(sys.argv[1])
 process = sp.Popen(["sis"], stdin=sp.PIPE, stdout=sp.PIPE, text=True)
 with open(str(pk) + "_comandi.txt", "w") as comandi:
+    comandi.write("state_assign " + assign_algo + "\n")
     process.stdin.write("read_blif fsm.blif\n")
     process.stdin.write("state_minimize\n")
-    if random.random() % 2 == 0:
-        comandi.write("state_assign jedi\n")
-        process.stdin.write("state_assign jedi\n")
-    else:
-        comandi.write("state_assign nova\n")
-        process.stdin.write("state_assign nova\n")
+    process.stdin.write("state_assign " + assign_algo + "\n")
     process.stdin.write("stg_to_network\n")
     process.stdin.write("print_stats\n")
     # esecuzione di n comandi con relativa scrittura, n parametro da terminale
-    for _ in range(int(sys.argv[1])):
+    for _ in range(int(sys.argv[2])):
         cmd = commands[random.randrange(10)]
         comandi.write(cmd + "\n")
         process.stdin.write(cmd + "\n")
