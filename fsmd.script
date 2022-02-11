@@ -3,3 +3,11 @@ source fsm.script
 read_blif fsmd.blif
 source script.rugged
 write_blif min_fsmd.blif
+read_blif min_fsmd.blif
+full_simplify
+full_simplify
+simplify
+reduce_depth
+simplify
+source script.rugged
+write_blif min_fsmd.blif

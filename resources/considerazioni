@@ -2,3 +2,4 @@
 - con valvola_basico e valcola_acido entrambi a 0 il datapath cosa manda in output
 - uno_8bit sarebbe 0.0625
 - and sull'ultimo mux del ph per evitare che chiudi faccia passare il avlore nel registro quando c'è errore
+- differenza percentuale tra file di partenza, script manuale e script random
