@@ -1,17 +1,17 @@
 DATAPATH
 pre:    200 nodi    717 letterali
 scr:    46 nodi     211 letterali
-min:    44 nodi     201 letterali   (-78%, -72%)
+min:    44 nodi     201 letterali   (-78.00%, -71.97%)
 
 FSM
 pre:    9 nodi      229 letterali
 scr:    11 nodi     61 letterali
-min:    11 nodi     51 letterali    (+22%, -78%)
+min:    11 nodi     51 letterali    (+22.22%, -77.73%)
 
 FSMD
 pre:    56 nodi     253 letterali
 scr:    54 nodi     254 letterali
-min:    58 nodi     248 letterali   (+3.5%, -2%)
+min:    61 nodi     245 letterali   (+08.92%, -03.16%)
 
 MAPPED FSMD
 Total Area              = 5656.00
