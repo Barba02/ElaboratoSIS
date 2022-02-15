@@ -5,8 +5,8 @@ from os.path import exists
 
 
 # statistiche riferimento min_datapath.blif
-min_nodes = 9
-min_lits = 51
+min_nodes = 11
+min_lits = 61
 # lista dei comandi di sis per la sintesi
 commands = ["source script.rugged", "eliminate -1", "sweep", "fx", "resub", "simplify", "full_simplify", "collapse",
             "reduce_depth", "espresso"]
