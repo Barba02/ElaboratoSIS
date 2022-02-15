@@ -13,8 +13,8 @@ elif blif == "fsm":
     min_nodes = 11
     min_lits = 51
 elif blif == "fsmd":
-    min_nodes = 58
-    min_lits = 248
+    min_nodes = 61
+    min_lits = 245
 else:
     exit(0)
 # lista dei comandi di sis per la sintesi
