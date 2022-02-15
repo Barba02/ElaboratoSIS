@@ -2,5 +2,5 @@ source datapath.script
 source fsm.script
 read_blif fsmd.blif
 source script.rugged
+fx
 write_blif min_fsmd.blif
-print_stats
