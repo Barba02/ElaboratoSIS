@@ -14,10 +14,5 @@ scr:    54 nodi     254 letterali
 min:    58 nodi     248 letterali   (+3.5%, -2%)
 
 MAPPED FSMD
-Total Area              = 5840.00
-Gate Count              = 177
-Buffer Count            = 25
-Inverter Count          = 56
-Most Negative Slack     =   0.00
-Sum of Negative Slacks  =   0.00
-Number of Critical PO   = 0
+total gate area:       5840.00
+maximum arrival time: (27.80,27.80)
