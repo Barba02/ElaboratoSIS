@@ -142,7 +142,7 @@ def reset():
             # se il ph in input è maggiore di 14 si va nello stato di errore con il relativo bit alzato
             if ph > 14:
                 state = "errore"
-                file_print("0 0 0 0", 0, 0)
+                file_print("0 1 0 0", 0, 0)
             # se il ph è valido
             else:
                 # nel caso sia già neutro passo allo stato di fine
@@ -154,11 +154,11 @@ def reset():
                     # se la soluzione è acida passo allo stato di eroga_base
                     if ph < 7:
                         state = "eroga_base"
-                        file_print("0 0 0 0", 0, 0)
+                        file_print("0 0 0 1", 0, 0)
                     # se la soluzione è acida passo allo stato di eroga_acido
                     else:
                         state = "eroga_acido"
-                        file_print("0 0 0 0", 0, 0)
+                        file_print("0 0 1 0", 0, 0)
     # faccio entrare il ph nel registro
     next_state_ph = ph
 
@@ -216,7 +216,7 @@ if __name__ == "__main__":
         state = "reset"
         # apertura dei file con gli input da dare a sis e gli output aspettati
         with open("expected_outputs.txt", "w") as eo, open("inputs.txt", "w") as inputs:
-            inputs.write("read_blif \"../min_fsmd.blif\"\n")
+            inputs.write("read_blif \"../../min_fsmd.blif\"\n")
             # inizio del ciclo
             user_input = genera_input()
             for _ in range(input_x_test):
