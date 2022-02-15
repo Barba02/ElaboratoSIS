@@ -5,8 +5,8 @@ from os.path import exists
 
 
 # statistiche riferimento min_datapath.blif
-min_nodes = 50
-min_lits = 244
+min_nodes = 55
+min_lits = 251
 # lista dei comandi di sis per la sintesi
 commands = ["source script.rugged", "eliminate -1", "sweep", "fx", "resub", "simplify", "full_simplify", "collapse",
             "reduce_depth", "espresso"]
@@ -21,7 +21,7 @@ with open("auto_increment.txt", "w") as ai:
 # inizio sottoprocesso
 process = sp.Popen(["sis"], stdin=sp.PIPE, stdout=sp.PIPE, text=True)
 with open(str(pk) + "_comandi.txt", "w") as comandi:
-    process.stdin.write("read_blif min_fsmd_prec.blif\n")
+    process.stdin.write("read_blif full_fsmd.blif\n")
     # esecuzione di n comandi con relativa scrittura, n parametro da terminale
     for _ in range(int(sys.argv[1])):
         cmd = commands[random.randrange(10)]

@@ -1,239 +1,479 @@
 .model datapath
 .inputs SELETTORE_MUX VALVOLA_APERTA pH7 pH6 pH5 pH4 pH3 pH2 pH1 pH0
-.outputs CHIUDI PH_FINALE7 PH_FINALE6 PH_FINALE5 PH_FINALE4 PH_FINALE3 PH_FINALE2 PH_FINALE1 PH_FINALE0 \
-NCLK7 NCLK6 NCLK5 NCLK4 NCLK3 NCLK2 NCLK1 NCLK0
-.subckt mux_2comb_8bit S=CHIUDI I1_7=c7 I1_6=c6 I1_5=c5 I1_4=c4 I1_3=c3 I1_2=c2 I1_1=c1 I1_0=c0 \
-I0_7=f7 I0_6=f6 I0_5=f5 I0_4=f4 I0_3=f3 I0_2=f2 I0_1=f1 I0_0=f0 \
-O7=a7 O6=a6 O5=a5 O4=a4 O3=a3 O2=a2 O1=a1 O0=a0
-.subckt mux_2comb_8bit S=SELETTORE_MUX I1_7=a7 I1_6=a6 I1_5=a5 I1_4=a4 I1_3=a3 I1_2=a2 I1_1=a1 I1_0=a0 \
-I0_7=pH7 I0_6=pH6 I0_5=pH5 I0_4=pH4 I0_3=pH3 I0_2=pH2 I0_1=pH1 I0_0=pH0 \
-O7=b7 O6=b6 O5=b5 O4=b4 O3=b3 O2=b2 O1=b1 O0=b0
-.subckt registro_8bit A7=b7 A6=b6 A5=b5 A4=b4 A3=b3 A2=b2 A1=b1 A0=b0 \
-O7=c7 O6=c6 O5=c5 O4=c4 O3=c3 O2=c2 O1=c1 O0=c0
-.subckt ph_neutro A7=c7 A6=c6 A5=c5 A4=c4 A3=c3 A2=c2 A1=c1 A0=c0 O=CHIUDI
-.subckt zero_8bit O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
-.subckt and A=CHIUDI B=SELETTORE_MUX O=g
-.subckt mux_2comb_8bit S=g I1_7=c7 I1_6=c6 I1_5=c5 I1_4=c4 I1_3=c3 I1_2=c2 I1_1=c1 I1_0=c0 \
-I0_7=z7 I0_6=z6 I0_5=z5 I0_4=z4 I0_3=z3 I0_2=z2 I0_1=z1 I0_0=z0 \
-O7=PH_FINALE7 O6=PH_FINALE6 O5=PH_FINALE5 O4=PH_FINALE4 O3=PH_FINALE3 O2=PH_FINALE2 O1=PH_FINALE1 O0=PH_FINALE0
-.subckt acidificatore A7=c7 A6=c6 A5=c5 A4=c4 A3=c3 A2=c2 A1=c1 A0=c0 \
-O7=d7 O6=d6 O5=d5 O4=d4 O3=d3 O2=d2 O1=d1 O0=d0
-.subckt alcalinizzatore A7=c7 A6=c6 A5=c5 A4=c4 A3=c3 A2=c2 A1=c1 A0=c0 \
-O7=e7 O6=e6 O5=e5 O4=e4 O3=e3 O2=e2 O1=e1 O0=e0
-.subckt mux_2comb_8bit S=VALVOLA_APERTA I1_7=d7 I1_6=d6 I1_5=d5 I1_4=d4 I1_3=d3 I1_2=d2 I1_1=d1 I1_0=d0 \
-I0_7=e7 I0_6=e6 I0_5=e5 I0_4=e4 I0_3=e3 I0_2=e2 I0_1=e1 I0_0=e0 \
-O7=f7 O6=f6 O5=f5 O4=f4 O3=f3 O2=f2 O1=f1 O0=f0
-.subckt mux_2comb_8bit S=CHIUDI I1_7=j7 I1_6=j6 I1_5=j5 I1_4=j4 I1_3=j3 I1_2=j2 I1_1=j1 I1_0=j0 \
-I0_7=k7 I0_6=k6 I0_5=k5 I0_4=k4 I0_3=k3 I0_2=k2 I0_1=k1 I0_0=k0 \
-O7=h7 O6=h6 O5=h5 O4=h4 O3=h3 O2=h2 O1=h1 O0=h0
-.subckt mux_2comb_8bit S=SELETTORE_MUX I1_7=h7 I1_6=h6 I1_5=h5 I1_4=h4 I1_3=h3 I1_2=h2 I1_1=h1 I1_0=h0 \
-I0_7=z7 I0_6=z6 I0_5=z5 I0_4=z4 I0_3=z3 I0_2=z2 I0_1=z1 I0_0=z0 \
-O7=i7 O6=i6 O5=i5 O4=i4 O3=i3 O2=i2 O1=i1 O0=i0
-.subckt registro_8bit A7=i7 A6=i6 A5=i5 A4=i4 A3=i3 A2=i2 A1=i1 A0=i0 \
-O7=j7 O6=j6 O5=j5 O4=j4 O3=j3 O2=j2 O1=j1 O0=j0
-.subckt mux_2comb_8bit S=g I1_7=j7 I1_6=j6 I1_5=j5 I1_4=j4 I1_3=j3 I1_2=j2 I1_1=j1 I1_0=j0 \
-I0_7=z7 I0_6=z6 I0_5=z5 I0_4=z4 I0_3=z3 I0_2=z2 I0_1=z1 I0_0=z0 \
-O7=NCLK7 O6=NCLK6 O5=NCLK5 O4=NCLK4 O3=NCLK3 O2=NCLK2 O1=NCLK1 O0=NCLK0
-.subckt incrementatore_8bit A7=j7 A6=j6 A5=j5 A4=j4 A3=j3 A2=j2 A1=j1 A0=j0 \
-O7=k7 O6=k6 O5=k5 O4=k4 O3=k3 O2=k2 O1=k1 O0=k0
-.end
-
-.model mux_2comb
-.inputs S I1 I0
-.outputs O
-.names S I1 I0 O
+.outputs CHIUDI PH_FINALE7 PH_FINALE6 PH_FINALE5 PH_FINALE4 PH_FINALE3 \
+PH_FINALE2 PH_FINALE1 PH_FINALE0 NCLK7 NCLK6 NCLK5 NCLK4 NCLK3 NCLK2 NCLK1 \
+NCLK0
+.latch    b7 c7 re NIL 0
+.latch    b6 c6 re NIL 0
+.latch    b5 c5 re NIL 0
+.latch    b4 c4 re NIL 0
+.latch    b3 c3 re NIL 0
+.latch    b2 c2 re NIL 0
+.latch    b1 c1 re NIL 0
+.latch    b0 c0 re NIL 0
+.latch    i7 j7 re NIL 0
+.latch    i6 j6 re NIL 0
+.latch    i5 j5 re NIL 0
+.latch    i4 j4 re NIL 0
+.latch    i3 j3 re NIL 0
+.latch    i2 j2 re NIL 0
+.latch    i1 j1 re NIL 0
+.latch    i0 j0 re NIL 0
+.names a b CHIUDI
+11 1
+.names g c7 z7 PH_FINALE7
 11- 1
 0-1 1
-.end
-
-.model registro
-.inputs A
-.outputs O
-.latch A O re NIL 0
-.end
-
-.model sommatore
-.inputs A B CARRY_IN
-.outputs O CARRY_OUT
-.names A B K
-10 1
-01 1
-.names K CARRY_IN O
-10 1
-01 1
-.names A B CARRY_IN CARRY_OUT
--11 1
-1-1 1
+.names g c6 z6 PH_FINALE6
 11- 1
-.end
-
-.model zero
-.outputs O
-.names O
-.end
-
-.model uno
-.outputs O
-.names O
-1
-.end
-
-.model and
-.inputs A B
-.outputs O
-.names A B O
+0-1 1
+.names g c5 z5 PH_FINALE5
+11- 1
+0-1 1
+.names g c4 z4 PH_FINALE4
+11- 1
+0-1 1
+.names g c3 z3 PH_FINALE3
+11- 1
+0-1 1
+.names g c2 z2 PH_FINALE2
+11- 1
+0-1 1
+.names g c1 z1 PH_FINALE1
+11- 1
+0-1 1
+.names g c0 z0 PH_FINALE0
+11- 1
+0-1 1
+.names g j7 z7 NCLK7
+11- 1
+0-1 1
+.names g j6 z6 NCLK6
+11- 1
+0-1 1
+.names g j5 z5 NCLK5
+11- 1
+0-1 1
+.names g j4 z4 NCLK4
+11- 1
+0-1 1
+.names g j3 z3 NCLK3
+11- 1
+0-1 1
+.names g j2 z2 NCLK2
+11- 1
+0-1 1
+.names g j1 z1 NCLK1
+11- 1
+0-1 1
+.names g j0 z0 NCLK0
+11- 1
+0-1 1
+.names VALVOLA_APERTA d7 e7 f7
+11- 1
+0-1 1
+.names VALVOLA_APERTA d6 e6 f6
+11- 1
+0-1 1
+.names VALVOLA_APERTA d5 e5 f5
+11- 1
+0-1 1
+.names VALVOLA_APERTA d4 e4 f4
+11- 1
+0-1 1
+.names VALVOLA_APERTA d3 e3 f3
+11- 1
+0-1 1
+.names VALVOLA_APERTA d2 e2 f2
+11- 1
+0-1 1
+.names VALVOLA_APERTA d1 e1 f1
+11- 1
+0-1 1
+.names VALVOLA_APERTA d0 e0 f0
+11- 1
+0-1 1
+.names CHIUDI c7 f7 a7
+11- 1
+0-1 1
+.names CHIUDI c6 f6 a6
+11- 1
+0-1 1
+.names CHIUDI c5 f5 a5
+11- 1
+0-1 1
+.names CHIUDI c4 f4 a4
+11- 1
+0-1 1
+.names CHIUDI c3 f3 a3
+11- 1
+0-1 1
+.names CHIUDI c2 f2 a2
+11- 1
+0-1 1
+.names CHIUDI c1 f1 a1
+11- 1
+0-1 1
+.names CHIUDI c0 f0 a0
+11- 1
+0-1 1
+.names SELETTORE_MUX a7 pH7 b7
+11- 1
+0-1 1
+.names SELETTORE_MUX a6 pH6 b6
+11- 1
+0-1 1
+.names SELETTORE_MUX a5 pH5 b5
+11- 1
+0-1 1
+.names SELETTORE_MUX a4 pH4 b4
+11- 1
+0-1 1
+.names SELETTORE_MUX a3 pH3 b3
+11- 1
+0-1 1
+.names SELETTORE_MUX a2 pH2 b2
+11- 1
+0-1 1
+.names SELETTORE_MUX a1 pH1 b1
+11- 1
+0-1 1
+.names SELETTORE_MUX a0 pH0 b0
+11- 1
+0-1 1
+.names z7
+.names z6
+.names z5
+.names z4
+.names z3
+.names z2
+.names z1
+.names z0
+.names CHIUDI SELETTORE_MUX g
 11 1
-.end
-
-.model or
-.inputs A B
-.outputs O
-.names A B O
+.names [266] [267] d7
 01 1
 10 1
-11 1
-.end
-
-.model xor
-.inputs A B
-.outputs O
-.names A B O
+.names [268] [269] d6
 01 1
 10 1
-.end
-
-.model uno_8bit
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt zero O=O7
-.subckt zero O=O6
-.subckt zero O=O5
-.subckt zero O=O4
-.subckt zero O=O3
-.subckt zero O=O2
-.subckt zero O=O1
-.subckt uno O=O0
-.end
-
-.model zero_8bit
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt zero O=O7
-.subckt zero O=O6
-.subckt zero O=O5
-.subckt zero O=O4
-.subckt zero O=O3
-.subckt zero O=O2
-.subckt zero O=O1
-.subckt zero O=O0
-.end
-
-.model sei_9375
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt zero O=O7
-.subckt uno O=O6
-.subckt uno O=O5
-.subckt zero O=O4
-.subckt uno O=O3
-.subckt uno O=O2
-.subckt uno O=O1
-.subckt uno O=O0
-.end
-
-.model otto
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt uno O=O7
-.subckt zero O=O6
-.subckt zero O=O5
-.subckt zero O=O4
-.subckt zero O=O3
-.subckt zero O=O2
-.subckt zero O=O1
-.subckt zero O=O0
-.end
-
-.model zero_5_c2
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt uno O=O7
-.subckt uno O=O6
-.subckt uno O=O5
-.subckt uno O=O4
-.subckt uno O=O3
-.subckt zero O=O2
-.subckt zero O=O1
-.subckt zero O=O0
-.end
-
-.model zero_25
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt zero O=O7
-.subckt zero O=O6
-.subckt zero O=O5
-.subckt zero O=O4
-.subckt zero O=O3
-.subckt uno O=O2
-.subckt zero O=O1
-.subckt zero O=O0
-.end
-
-.model sommatore_8bit
-.inputs A7 A6 A5 A4 A3 A2 A1 A0 B7 B6 B5 B4 B3 B2 B1 B0
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt zero O=z
-.subckt sommatore A=A0 B=B0 CARRY_IN=z O=O0 CARRY_OUT=c0
-.subckt sommatore A=A1 B=B1 CARRY_IN=c0 O=O1 CARRY_OUT=c1
-.subckt sommatore A=A2 B=B2 CARRY_IN=c1 O=O2 CARRY_OUT=c2
-.subckt sommatore A=A3 B=B3 CARRY_IN=c2 O=O3 CARRY_OUT=c3
-.subckt sommatore A=A4 B=B4 CARRY_IN=c3 O=O4 CARRY_OUT=c4
-.subckt sommatore A=A5 B=B5 CARRY_IN=c4 O=O5 CARRY_OUT=c5
-.subckt sommatore A=A6 B=B6 CARRY_IN=c5 O=O6 CARRY_OUT=c6
-.subckt sommatore A=A7 B=B7 CARRY_IN=c6 O=O7 CARRY_OUT=c7
-.end
-
-.model incrementatore_8bit
-.inputs A7 A6 A5 A4 A3 A2 A1 A0
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt uno_8bit O7=B7 O6=B6 O5=B5 O4=B4 O3=B3 O2=B2 O1=B1 O0=B0
-.subckt sommatore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=B7 B6=B6 B5=B5 B4=B4 B3=B3 B2=B2 B1=B1 B0=B0 O7=O7 O6=O6 O5=O5 O4=O4 O3=O3 O2=O2 O1=O1 O0=O0
-.end
-
-.model alcalinizzatore
-.inputs A7 A6 A5 A4 A3 A2 A1 A0
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt zero_25 O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
-.subckt sommatore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=z7 B6=z6 B5=z5 B4=z4 B3=z3 B2=z2 B1=z1 B0=z0 O7=O7 O6=O6 O5=O5 O4=O4 O3=O3 O2=O2 O1=O1 O0=O0
-.end
-
-.model acidificatore
-.inputs A7 A6 A5 A4 A3 A2 A1 A0
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt zero_5_c2 O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
-.subckt sommatore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=z7 B6=z6 B5=z5 B4=z4 B3=z3 B2=z2 B1=z1 B0=z0 O7=O7 O6=O6 O5=O5 O4=O4 O3=O3 O2=O2 O1=O1 O0=O0
-.end
-
-.model mux_2comb_8bit
-.inputs S I1_7 I1_6 I1_5 I1_4 I1_3 I1_2 I1_1 I1_0 I0_7 I0_6 I0_5 I0_4 I0_3 I0_2 I0_1 I0_0
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt mux_2comb S=S I1=I1_7 I0=I0_7 O=O7
-.subckt mux_2comb S=S I1=I1_6 I0=I0_6 O=O6
-.subckt mux_2comb S=S I1=I1_5 I0=I0_5 O=O5
-.subckt mux_2comb S=S I1=I1_4 I0=I0_4 O=O4
-.subckt mux_2comb S=S I1=I1_3 I0=I0_3 O=O3
-.subckt mux_2comb S=S I1=I1_2 I0=I0_2 O=O2
-.subckt mux_2comb S=S I1=I1_1 I0=I0_1 O=O1
-.subckt mux_2comb S=S I1=I1_0 I0=I0_0 O=O0
-.end
-
-.model maggiore_8bit
-.inputs A7 A6 A5 A4 A3 A2 A1 A0 B7 B6 B5 B4 B3 B2 B1 B0
-.outputs O
-.subckt xor A=A7 B=B7 O=O7
-.subckt xor A=A6 B=B6 O=O6
-.subckt xor A=A5 B=B5 O=O5
-.subckt xor A=A4 B=B4 O=O4
-.subckt xor A=A3 B=B3 O=O3
-.subckt xor A=A2 B=B2 O=O2
-.subckt xor A=A1 B=B1 O=O1
-.subckt xor A=A0 B=B0 O=O0
-.names A7 A6 A5 A4 A3 A2 A1 A0 O7 O6 O5 O4 O3 O2 O1 O0 O
+.names [270] [271] d5
+01 1
+10 1
+.names [272] [273] d4
+01 1
+10 1
+.names [274] [275] d3
+01 1
+10 1
+.names [276] [277] d2
+01 1
+10 1
+.names [278] [279] d1
+01 1
+10 1
+.names [280] [281] d0
+01 1
+10 1
+.names [22] [193] e7
+01 1
+10 1
+.names [21] [195] e6
+01 1
+10 1
+.names [20] [197] e5
+01 1
+10 1
+.names [19] [199] e4
+01 1
+10 1
+.names [18] [201] e3
+01 1
+10 1
+.names [17] [203] e2
+01 1
+10 1
+.names [16] [205] e1
+01 1
+10 1
+.names K z e0
+01 1
+10 1
+.names [233] [234] k7
+01 1
+10 1
+.names [235] [236] k6
+01 1
+10 1
+.names [237] [238] k5
+01 1
+10 1
+.names [239] [240] k4
+01 1
+10 1
+.names [241] [242] k3
+01 1
+10 1
+.names [243] [244] k2
+01 1
+10 1
+.names [245] [246] k1
+01 1
+10 1
+.names [247] [248] k0
+01 1
+10 1
+.names CHIUDI j7 k7 h7
+11- 1
+0-1 1
+.names CHIUDI j6 k6 h6
+11- 1
+0-1 1
+.names CHIUDI j5 k5 h5
+11- 1
+0-1 1
+.names CHIUDI j4 k4 h4
+11- 1
+0-1 1
+.names CHIUDI j3 k3 h3
+11- 1
+0-1 1
+.names CHIUDI j2 k2 h2
+11- 1
+0-1 1
+.names CHIUDI j1 k1 h1
+11- 1
+0-1 1
+.names CHIUDI j0 k0 h0
+11- 1
+0-1 1
+.names SELETTORE_MUX h7 z7 i7
+11- 1
+0-1 1
+.names SELETTORE_MUX h6 z6 i6
+11- 1
+0-1 1
+.names SELETTORE_MUX h5 z5 i5
+11- 1
+0-1 1
+.names SELETTORE_MUX h4 z4 i4
+11- 1
+0-1 1
+.names SELETTORE_MUX h3 z3 i3
+11- 1
+0-1 1
+.names SELETTORE_MUX h2 z2 i2
+11- 1
+0-1 1
+.names SELETTORE_MUX h1 z1 i1
+11- 1
+0-1 1
+.names SELETTORE_MUX h0 z0 i0
+11- 1
+0-1 1
+.names c7 [208] [22]
+01 1
+10 1
+.names c6 [209] [195] [193]
+11- 1
+1-1 1
+-11 1
+.names c6 [209] [21]
+01 1
+10 1
+.names c5 [210] [197] [195]
+11- 1
+1-1 1
+-11 1
+.names c5 [210] [20]
+01 1
+10 1
+.names c4 [211] [199] [197]
+11- 1
+1-1 1
+-11 1
+.names c4 [211] [19]
+01 1
+10 1
+.names c3 [212] [201] [199]
+11- 1
+1-1 1
+-11 1
+.names c3 [212] [18]
+01 1
+10 1
+.names c2 [213] [203] [201]
+11- 1
+1-1 1
+-11 1
+.names c2 [213] [17]
+01 1
+10 1
+.names c1 [214] [205] [203]
+11- 1
+1-1 1
+-11 1
+.names c1 [214] [16]
+01 1
+10 1
+.names c0 [215] z [205]
+11- 1
+1-1 1
+-11 1
+.names c0 [215] K
+01 1
+10 1
+.names z
+.names [208]
+.names [209]
+.names [210]
+.names [211]
+.names [212]
+.names [213]
+ 1
+.names [214]
+.names [215]
+.names c7 [208] [193] [216]
+11- 1
+1-1 1
+-11 1
+.names j7 B7 [233]
+01 1
+10 1
+.names j6 B6 [236] [234]
+11- 1
+1-1 1
+-11 1
+.names j6 B6 [235]
+01 1
+10 1
+.names j5 B5 [238] [236]
+11- 1
+1-1 1
+-11 1
+.names j5 B5 [237]
+01 1
+10 1
+.names j4 B4 [240] [238]
+11- 1
+1-1 1
+-11 1
+.names j4 B4 [239]
+01 1
+10 1
+.names j3 B3 [242] [240]
+11- 1
+1-1 1
+-11 1
+.names j3 B3 [241]
+01 1
+10 1
+.names j2 B2 [244] [242]
+11- 1
+1-1 1
+-11 1
+.names j2 B2 [243]
+01 1
+10 1
+.names j1 B1 [246] [244]
+11- 1
+1-1 1
+-11 1
+.names j1 B1 [245]
+01 1
+10 1
+.names j0 B0 [248] [246]
+11- 1
+1-1 1
+-11 1
+.names j0 B0 [247]
+01 1
+10 1
+.names [248]
+.names B7
+.names B6
+.names B5
+.names B4
+.names B3
+.names B2
+.names B1
+.names B0
+ 1
+.names j7 B7 [234] [257]
+11- 1
+1-1 1
+-11 1
+.names c7 [282] [266]
+01 1
+10 1
+.names c6 [283] [269] [267]
+11- 1
+1-1 1
+-11 1
+.names c6 [283] [268]
+01 1
+10 1
+.names c5 [284] [271] [269]
+11- 1
+1-1 1
+-11 1
+.names c5 [284] [270]
+01 1
+10 1
+.names c4 [285] [273] [271]
+11- 1
+1-1 1
+-11 1
+.names c4 [285] [272]
+01 1
+10 1
+.names c3 [286] [275] [273]
+11- 1
+1-1 1
+-11 1
+.names c3 [286] [274]
+01 1
+10 1
+.names c2 [287] [277] [275]
+11- 1
+1-1 1
+-11 1
+.names c2 [287] [276]
+01 1
+10 1
+.names c1 [288] [279] [277]
+11- 1
+1-1 1
+-11 1
+.names c1 [288] [278]
+01 1
+10 1
+.names c0 [289] [281] [279]
+11- 1
+1-1 1
+-11 1
+.names c0 [289] [280]
+01 1
+10 1
+.names [281]
+.names [282]
+ 1
+.names [283]
+ 1
+.names [284]
+ 1
+.names [285]
+ 1
+.names [286]
+ 1
+.names [287]
+.names [288]
+.names [289]
+.names c7 [282] [267] [290]
+11- 1
+1-1 1
+-11 1
+.names c7 c6 c5 c4 c3 c2 c1 c0 O7 O6 O5 O4 O3 O2 O1 O0 a
 1-------1------- 1
 -1------01------ 1
 --1-----001----- 1
@@ -242,35 +482,86 @@ O7=k7 O6=k6 O5=k5 O4=k4 O3=k3 O2=k2 O1=k1 O0=k0
 -----1--000001-- 1
 ------1-0000001- 1
 -------100000001 1
-.end
-
-.model minore_uguale_8bit
-.inputs A7 A6 A5 A4 A3 A2 A1 A0 B7 B6 B5 B4 B3 B2 B1 B0
-.outputs O
-.subckt maggiore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=B7 B6=B6 B5=B5 B4=B4 B3=B3 B2=B2 B1=B1 B0=B0 O=X
-.names X O
+.names X b
 0 1
-.end
-
-.model registro_8bit
-.inputs A7 A6 A5 A4 A3 A2 A1 A0
-.outputs O7 O6 O5 O4 O3 O2 O1 O0
-.subckt registro A=A7 O=O7
-.subckt registro A=A6 O=O6
-.subckt registro A=A5 O=O5
-.subckt registro A=A4 O=O4
-.subckt registro A=A3 O=O3
-.subckt registro A=A2 O=O2
-.subckt registro A=A1 O=O1
-.subckt registro A=A0 O=O0
-.end
-
-.model ph_neutro
-.inputs A7 A6 A5 A4 A3 A2 A1 A0
-.outputs O
-.subckt sei_9375 O7=z7 O6=z6 O5=z5 O4=z4 O3=z3 O2=z2 O1=z1 O0=z0
-.subckt maggiore_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=z7 B6=z6 B5=z5 B4=z4 B3=z3 B2=z2 B1=z1 B0=z0 O=a
-.subckt otto O7=x7 O6=x6 O5=x5 O4=x4 O3=x3 O2=x2 O1=x1 O0=x0
-.subckt minore_uguale_8bit A7=A7 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B7=x7 B6=x6 B5=x5 B4=x4 B3=x3 B2=x2 B1=x1 B0=x0 O=b
-.subckt and A=a B=b O=O
+.names [294]
+.names [295]
+ 1
+.names [296]
+ 1
+.names [297]
+.names [298]
+ 1
+.names [299]
+ 1
+.names [300]
+ 1
+.names [301]
+ 1
+.names c7 [294] O7
+01 1
+10 1
+.names c6 [295] O6
+01 1
+10 1
+.names c5 [296] O5
+01 1
+10 1
+.names c4 [297] O4
+01 1
+10 1
+.names c3 [298] O3
+01 1
+10 1
+.names c2 [299] O2
+01 1
+10 1
+.names c1 [300] O1
+01 1
+10 1
+.names c0 [301] O0
+01 1
+10 1
+.names x7
+ 1
+.names x6
+.names x5
+.names x4
+.names x3
+.names x2
+.names x1
+.names x0
+.names c7 c6 c5 c4 c3 c2 c1 c0 [77] [78] [79] [80] [81] [82] [83] [84] X
+1-------1------- 1
+-1------01------ 1
+--1-----001----- 1
+---1----0001---- 1
+----1---00001--- 1
+-----1--000001-- 1
+------1-0000001- 1
+-------100000001 1
+.names c7 x7 [77]
+01 1
+10 1
+.names c6 x6 [78]
+01 1
+10 1
+.names c5 x5 [79]
+01 1
+10 1
+.names c4 x4 [80]
+01 1
+10 1
+.names c3 x3 [81]
+01 1
+10 1
+.names c2 x2 [82]
+01 1
+10 1
+.names c1 x1 [83]
+01 1
+10 1
+.names c0 x0 [84]
+01 1
+10 1
 .end

@@ -23,7 +23,7 @@ assign_algo = str(sys.argv[1])
 process = sp.Popen(["sis"], stdin=sp.PIPE, stdout=sp.PIPE, text=True)
 with open(str(pk) + "_comandi.txt", "w") as comandi:
     comandi.write("state_assign " + assign_algo + "\n")
-    process.stdin.write("read_blif fsm.blif\n")
+    process.stdin.write("read_blif full_fsm.blif\n")
     process.stdin.write("state_minimize\n")
     process.stdin.write("state_assign " + assign_algo + "\n")
     process.stdin.write("stg_to_network\n")
