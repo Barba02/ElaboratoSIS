@@ -13,6 +13,52 @@ pre:    56 nodi     253 letterali
 scr:    54 nodi     254 letterali
 min:    58 nodi     248 letterali   (+3.5%, -2%)
 
-MAPPED FSMD
+MAPPED FSMD (map -m 0 -sAF)
+# of outputs:          39
 total gate area:       5840.00
 maximum arrival time: (27.80,27.80)
+maximum po slack:     (18.00,18.00)
+minimum po slack:     (0.00,0.00)
+total neg slack:      (0.00,0.00)
+# of failing outputs:  0
+---- print_map_stats ----
+Total Area              = 5840.00
+Gate Count              = 177
+Buffer Count            = 25
+Inverter Count          = 56
+Most Negative Slack     =   0.00
+Sum of Negative Slacks  =   0.00
+Number of Critical PO   = 0
+
+MAPPED FSMD (map -m 0 -s)
+>>> before removing serial inverters <<<
+# of outputs:          39
+total gate area:       5832.00
+maximum arrival time: (30.40,30.40)
+maximum po slack:     (-8.40,-8.40)
+minimum po slack:     (-30.40,-30.40)
+total neg slack:      (-617.80,-617.80)
+# of failing outputs:  39
+>>> before removing parallel inverters <<<
+# of outputs:          39
+total gate area:       5832.00
+maximum arrival time: (30.40,30.40)
+maximum po slack:     (-8.40,-8.40)
+minimum po slack:     (-30.40,-30.40)
+total neg slack:      (-617.80,-617.80)
+# of failing outputs:  39
+# of outputs:          39
+total gate area:       5688.00
+maximum arrival time: (30.20,30.20)
+maximum po slack:     (-8.40,-8.40)
+minimum po slack:     (-30.20,-30.20)
+total neg slack:      (-616.40,-616.40)
+# of failing outputs:  39
+---- print_map_stats ----
+Total Area              = 5688.00
+Gate Count              = 159
+Buffer Count            = 19
+Inverter Count          = 27
+Most Negative Slack     = -30.20
+Sum of Negative Slacks  = -616.40
+Number of Critical PO   = 39
