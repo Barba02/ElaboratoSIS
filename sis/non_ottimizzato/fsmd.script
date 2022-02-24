@@ -1,8 +1,0 @@
-source fsm.script
-source datapath.script
-read_blif fsmd.blif
-sweep
-source script.rugged
-simplify
-fx
-write_blif min_fsmd.blif
