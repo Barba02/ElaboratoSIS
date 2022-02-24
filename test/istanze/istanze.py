@@ -5,7 +5,7 @@ test_success = []
 os.mkdir("output")
 for i in range(1, 8):
     # lettura degli input
-    ss = ["read_blif \"../../min_fsmd.blif\""]
+    ss = ["read_blif \"../../sis/FSMD.blif\""]
     with open(f"input/{i}.txt", "r") as inputs:
         for s in inputs.read().split("\n"):
             ss.append("sim " + s)

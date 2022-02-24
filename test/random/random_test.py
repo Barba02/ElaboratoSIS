@@ -215,8 +215,8 @@ if __name__ == "__main__":
         start = 0
         state = "reset"
         # apertura dei file con gli input da dare a sis e gli output aspettati
-        with open("expected_outputs.txt", "w") as eo, open("inputs.txt", "w") as inputs:
-            inputs.write("read_blif \"../../min_fsmd.blif\"\n")
+        with open("expected_output.txt", "w") as eo, open("input.txt", "w") as inputs:
+            inputs.write("read_blif \"../../sis/FSMD.blif\"\n")
             # inizio del ciclo
             user_input = genera_input()
             for _ in range(input_x_test):
@@ -225,7 +225,7 @@ if __name__ == "__main__":
             # chiusura ciclo
             inputs.write("quit\n")
         # lettura degli input da dare a sis
-        with open("inputs.txt", "r") as inputs:
+        with open("input.txt", "r") as inputs:
             ss = inputs.read().split("\n")
         # creazione sottoprocesso di sis
         process = sp.Popen(["sis"], stdin=sp.PIPE, stdout=sp.PIPE, text=True)
@@ -235,14 +235,14 @@ if __name__ == "__main__":
             process.stdin.write(line)
         # recupero dell'output del sottoprocesso una volta terminato
         out = str(process.communicate()[0])
-        with open("outputs.txt", "w") as outputs:
+        with open("output.txt", "w") as outputs:
             # parsing e scrittura di tutti gli output di sis
             while "Outputs" in out:
                 s = out[out.find("Outputs")+9:out.find("Outputs")+48] + "\n"
                 out = out[out.find("Outputs")+48:]
                 outputs.write(s)
         # lettura degli output di sis e di quelli aspettati
-        with open("outputs.txt", "r") as actual, open("expected_outputs.txt", "r") as expected:
+        with open("output.txt", "r") as actual, open("expected_output.txt", "r") as expected:
             # creazione degli array con gli output
             a = actual.read().split("\n")
             e = expected.read().split("\n")
